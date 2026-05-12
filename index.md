@@ -10,7 +10,7 @@ Thoughts on AI, Robotics, Technology, and Society.
 
 ## Latest Articles
 
-{% for post in _posts %}
+{% for post in site.posts %}
 
 ### [{{ post.title }}]({{ post.url }})
 
