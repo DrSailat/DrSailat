@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: 
 title: " Dr. Saira Latif "
 ---
 # Welcome
