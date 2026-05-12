@@ -2,9 +2,24 @@
 layout: post
 title: Dr. Saira Latif
 ---
+# Welcome to My Blog
 
-# Welcome
+Thoughts on AI, Robotics, Technology, and Society.
 
-This is my first Jekyll website using Cayman theme.
+---
 
-## Pages
+## Latest Articles
+
+{% for post in _posts %}
+
+### [{{ post.title }}]({{ post.url }})
+
+*{{ post.date | date: "%B %d, %Y" }}*
+
+{{ post.excerpt }}
+
+[Read More]({{ post.url }})
+
+---
+
+{% endfor %}
