@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Dr. Saira Latif's Blog
 ---
 
 
