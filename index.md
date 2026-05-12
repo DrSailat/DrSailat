@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: post
 title: " Dr. Saira Latif "
 ---
 # Welcome
