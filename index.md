@@ -1,4 +1,3 @@
-Markdown
 
 ---
 title: My Blog
@@ -8,8 +7,8 @@ title: My Blog
 This my personal blog/site 
 
 I write about:
--AI
--Robotics
+- AI
+- Robotics
 - Technology
 - Research
 
