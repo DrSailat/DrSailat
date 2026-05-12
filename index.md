@@ -1,6 +1,6 @@
 ---
 layout: home
-title: My Blog
+title: Home
 ---
 # Welcome to My Blog
 
