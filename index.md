@@ -1,6 +1,6 @@
 ---
-layout: post
-title: Dr. Saira Latif
+layout: home
+title: My Blog
 ---
 # Welcome to My Blog
 
