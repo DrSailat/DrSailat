@@ -1,4 +1,4 @@
-We all know about time , and with high flare of confidence, we perceive it quickly. Despite we realise its important in our lives no matter how often we forget about it completely in spur of moment!:)
+We all know about time , and with high flare of confidence, we perceive it quickly. Despite we realise its important in our lives no matter how often we forget about it completely in spur of moment!:))
 
 Just a few days ago, a leap day has passed. And that brought me back to think about time again for a while.
 
