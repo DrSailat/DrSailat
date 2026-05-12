@@ -1,25 +1,17 @@
 ---
-layout: home
+layout: default
 title: Home
 ---
-# Welcome to My Blog
 
-Thoughts on AI, Robotics, Technology, and Society.
+# {{ site.title }}
+
+{{ site.description }}
 
 ---
 
-## Latest Articles
+## Posts
 
 {% for post in site.posts %}
-
-### [{{ post.title }}]({{ post.url }})
-
-*{{ post.date | date: "%B %d, %Y" }}*
-
-{{ post.excerpt }}
-
-[Read More]({{ post.url }})
-
----
-
+- [{{ post.title }}]({{ post.url | relative_url }})
+  - {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
