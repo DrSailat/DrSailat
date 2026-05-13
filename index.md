@@ -4,9 +4,9 @@ title: Dr. Saira Latif's Blog
 ---
 
 
-## Posts
+## Articles
 
-{% for post in site.posts %}
-- [{{ post.title }}]({{ post.url | relative_url }})
+{% for Article in site.posts %}
+- [{{ Article.title }}]({{ Article.url | relative_url }})
   
 {% endfor %}
