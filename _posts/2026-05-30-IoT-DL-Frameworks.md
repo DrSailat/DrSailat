@@ -7,7 +7,7 @@ date: 2026-05-30
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFrameworks.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/IoT_Edge_DLFrameworks.jpeg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      IoT/Edge DL Frameworks Overview
@@ -40,7 +40,7 @@ The choice of model depends on:
   - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/IoT_Arciteture.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      Architecture for DL based IoT/Edge Use Cases
@@ -54,7 +54,7 @@ The choice of model depends on:
 
 
 
-# 1.  AUTOENCODES
+# 1.   AUTOENCODES
 
 An Autoencoder is an unsupervised learning model most frequently used as an anomaly detector. 
 
@@ -89,7 +89,7 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 ## 2.2 LSTM Components:
 
  <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/LASTM.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      Architecture for DL based IoT/Edge Use Cases
@@ -103,12 +103,7 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 
 ### 2.2.1 LSTM's Gates
 
-LSTM controls information flow using gates namely Forget Gate, Input gate and Output gates. Each gate is a small neural network with a Sigmoid activation function. Sigmoid Activation Function output:
-
-$$
-\sigma(x) = \frac{1}{1 + e^{-x}} 
-$$ 
-
+LSTM controls information flow using gates namely Forget Gate, Input gate and Output gates. Each gate is a small neural network with a Sigmoid activation function. Sigmoid Activation Function output: $\sigma(x) = \frac{1}{1 + e^{-x}} $
 
 
 This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks information if close to 0 and allows information if close to 1 and partially passes information if in between.
