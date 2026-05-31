@@ -7,7 +7,7 @@ date: 2026-05-30
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFramewroks.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFrameworks.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      IoT/Edge DL Frameworks Overview
