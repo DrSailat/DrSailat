@@ -22,22 +22,22 @@ ____________________________________________
 
 It is simply fascinating how integrating technology in day to day processes is crucial for our collective future and sustainability of infrastructures. Deep learning methods as a general concept are considered computation intensive or somewhat scary when it comes to low level applications but not an impossibility. `Recently I have been exploring from the plethora of ML & DL techniques and new research to extract a few commonly used techniques that are being deployed and utilized for various maintenance and monitoring applications. So if you are interested to be aware of some core DL methodologies for IoT or edge computing devices for various applications such as AI based monitering and predictive maintaince. Each ML framework is specialized application categories as tabulated in the table below: You ll find this introduction useful for holistic view;
 
-  | Model  | Best For        
+  | Model  | Best For    |    
   |-------|--------------|
-  | Autoencoder |anomaly detection | 
-  | LSTM  | sequential/time-series prediction | 
-  | CNN   | signal/image feature extraction  | 
-  | Transformers |long-range temporal relationships|
+  | Autoencoder | Anomaly detection | 
+  | LSTM  | Sequential/time-series prediction | 
+  | CNN   | Signal/Image feature extraction  | 
+  | Transformers |Long-range temporal relationships|
           
 
 The choice of model depends on:
-- sensor type,
-- compute power,
-- latency requirements,
+- Sensor type,
+- Compute power,
+- Latency requirements,
 - and whether inference runs on:
-  - microcontrollers,
-  - edge gateways,
-  - or cloud servers.
+  - Microcontrollers,
+  - Edge gateways,
+  - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
@@ -62,7 +62,7 @@ For decades and so, Autoencoders have been a buzz word in AI and Robotics. All o
 Unlike supervised learning, autoencoders do not require labeling or classification. The model learns underlying patterns, structure and correlation. It  extracts main features as a first step known as compression and generates latent representation/vector and then reconstructs it back as close to original data(decoder) . 
 
   |  Input → Encoder → Latent Space → Decoder → Reconstructed Output |
-  |------------------------------------------------------------------|
+ 
 
 ## 1.1 Core Idea
 “Anything reconstructed poorly is likely an anomaly! “
