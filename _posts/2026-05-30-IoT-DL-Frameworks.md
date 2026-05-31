@@ -276,19 +276,19 @@ There are several variants of LSTMs with different architecture designs based on
 # 3.   CNN- Convolutional Neural Networks
 Convolutional Neural Networks are specialized deep learning neural networks specially widely used for Images, spatial patterns, visual recognition, feature extraction and also being utilized extensively for sensor maps, vibration analysis, spectrogram etc.
 
-## 3.1   CORE IDEA:
+## 3.1   Core Idea
 CCN works on images and identifies edges, shapes and spatial patterns. 
 
 
-## 3.2  COMPONENTS:
+## 3.2  Components
  
     | Input Image→ Convolution  → Activation → Pooling →Feature Maps →  Fully Connected Layer → Output/Classification |
 
-### 3.2.1 cINPUT IMAGES
+### 3.2.1 Iput Images
 Input images provided for CNN could be 64x64 grayscale or 64x54x3RGB
 For training/testing/evulation purposes use mINSt dataset.
 
-### 3.2.2  CONVOLUTION LAYER
+### 3.2.2  Convolutional Layer
 A convolutional layer is like a small filter/kernel of suitable size that slides through the whole image and computer features like edges, textures or other patterns in each window slide and repeat. 
 Example for filter  or kernel could be:
 
@@ -305,11 +305,11 @@ Where:
 - \(*\) = convolution operation
 
 
-### 3.2.3  FEATURE MAPS
+### 3.2.3  Feature Maps
 As a result of convolution, important feature like edge, circles, cracks, or other features of intent get highlighted.
 
 
-### 3.2.4   ACTIVATION LAYER
+### 3.2.4   Activation Layer
 
 CNN utilizes ReLU function defined as 
 	
@@ -320,25 +320,25 @@ $$
 to remove negative values , and introduces nonlinearity to help CNN learn. There are other activation functions that are being used as well.
 
 | Concept | Python code:(add convolution filter, activation function , and input image to model)|
-|--------|----------------|
+|----------|----------------|
 | Conv2D Layer | `model.add(layers.Conv2D(32, (3,3), activation='relu', input_shape=(64,64,1)))` |
 
-### 3.2.5 POOLING LAYER
+### 3.2.5 Pooling Layer
 This layer compresses information. One example could be MaxPooling which takes the largest value in the region. It could vary depending on application. The pooling layer reduces computation, removes noise and improves robustness.
 
 | Concept | Python code:(add maxPooling to model)|
-|--------|----------------|
-|POOLING LAYER | `model.add(layers.MaxPooling2D((2,2)))` |
+|--------  |----------------|
+|POOLING LAYER  | `model.add(layers.MaxPooling2D((2,2)))` |
 
 
-### 3.2.5  FULLY CONNECTED LAYER
+### 3.2.5  Fully Connected Layer
 This layer finally outputs binary classification from features whether the input image is cat or dog, faulty or healthy  and so on.
 
 | Concept | Python code:(add maxPooling to model)|
 |--------|----------------|
-|                     |`model.add(layers.Dense(64, activation='relu'))` |
-|FULLY CONNECTED LAYER| `model.add(layers.Dense(2, activation='softmax'))`|
-|                      |`model.summary() `|
+|                        |`model.add(layers.Dense(64, activation='relu'))` |
+|FULLY CONNECTED LAYER   | `model.add(layers.Dense(2, activation='softmax'))`|
+|                        |`model.summary() `|
 
 
 ---
