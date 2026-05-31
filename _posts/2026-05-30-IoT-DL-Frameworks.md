@@ -136,13 +136,28 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 
 ## 2.2 LSTM Components:
 
-| Concept          |  Form |
-|------------------|--------------|
-| Candidate memory | $\tilde{C}_t$ |
-| Forget gate      | $f_t$ |
-| Input gate       | $i_t$ |
-| Memory update    | $C_t = f_t C_{t-1} + i_t \tilde{C}_t$ |
-
+<table border="1" style="border-collapse: collapse; margin:auto;">
+  <tr>
+    <th>Concept</th>
+    <th>Correct form</th>
+  </tr>
+  <tr>
+    <td>Candidate memory</td>
+    <td>$\tilde{C}_t$</td>
+  </tr>
+  <tr>
+    <td>Forget gate</td>
+    <td>$f_t$</td>
+  </tr>
+  <tr>
+    <td>Input gate</td>
+    <td>$i_t$</td>
+  </tr>
+  <tr>
+    <td>Memory update</td>
+    <td>$C_t = f_t C_{t-1} + i_t \tilde{C}_t$</td>
+  </tr>
+</table>
 
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
@@ -191,7 +206,8 @@ $$
 i_t = \sigma\left(W_i [h_{t-1}, x_t] + b_i\right)
 $$
 
-where:
+where :
+            
             - $i_t$ = input gate activation  
             - $x_t$ = current input  
             - $h_{t-1}$ = previous hidden state  
@@ -206,11 +222,12 @@ o_t = \sigma\left(W_o [h_{t-1}, x_t] + b_o\right)
 $$
 
 where:
-          - $o_t$ = output gate activation  
-          - $x_t$ = current input  
-          - $h_{t-1}$ = previous hidden state  
-          - $W_o$ = output gate weights  
-          - $b_o$ = bias term
+
+            - $o_t$ = output gate activation  
+            - $x_t$ = current input  
+            - $h_{t-1}$ = previous hidden state  
+            - $W_o$ = output gate weights  
+            - $b_o$ = bias term
 
 
 
@@ -234,7 +251,7 @@ $$
 Input gate multiplies candidate memory, not old memory.
 
 
- ### 2.2.3  Hidden states
+### 2.2.3  Hidden states
 
 It is where final output is delivered by LSTM defined by equation:
 
