@@ -3,6 +3,3 @@ description: AI, Robotics, Technology, Well-being
 
 theme: jekyll-theme-cayman
 baseurl: "/DrSailat"
-
-include:
-  - _includes
