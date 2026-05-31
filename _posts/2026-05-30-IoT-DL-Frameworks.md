@@ -94,6 +94,10 @@ Most common Industrial use cases are:
 - Thermal Anomaly Detection - Machine Fault
 
 
+
+
+
+
 # 2. LSTM (Long Short-Term Memory)
 
 LSTM as we know is best known as an ML technique applied for time series data or sequential data to examine trends and has been widely used across racing applications to forecasting. Unlike traditional Neural Networks which typically don't remember previous inputs, LSTM have memory and don't forget previous inputs. Therefore contains "memory cells“, “gates”  and “hidden states”  which enable it possible to predict or estimate  compound behaviour over time.
@@ -119,7 +123,10 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 
 ### 2.2.1 LSTM's Gates
 
-LSTM controls information flow using gates namely Forget Gate, Input gate and Output gates. Each gate is a small neural network with a Sigmoid activation function. Sigmoid Activation Function output: $\sigma(x) = \frac{1}{1 + e^{-x}} $
+LSTM controls information flow using gates namely Forget Gate, Input gate and Output gates. Each gate is a small neural network with a Sigmoid activation function. Sigmoid Activation Function output: 
+$$
+\sigma(x) = \frac{1}{1 + e^{-x}} 
+$$
 
 
 This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks information if close to 0 and allows information if close to 1 and partially passes information if in between.
