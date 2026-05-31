@@ -52,7 +52,6 @@ It is simply fascinating how integrating technology in day to day processes is c
 <div style="text-align: center;">
 
 <table border="1" style="margin-left:auto; margin-right:auto;">
-  <tr>
     <tr>
       <th>Model</th>
       <th>Best Use Cases</th>
@@ -74,9 +73,11 @@ It is simply fascinating how integrating technology in day to day processes is c
       <td>Long-range temporal relationships</td>
     </tr>
 </table>
+
 </div>        
 
 The choice of model depends on:
+
       - Sensor type,
       - Compute power,
       - Latency requirements,
@@ -97,7 +98,7 @@ The choice of model depends on:
 
 </p>
 
-_________________________________________________________________________________________
+___
 <br><br>
 # 1.   AUTOENCODES
 
@@ -123,7 +124,7 @@ Most common Industrial use cases are:
 - Thermal Anomaly Detection - Machine Fault
 
 
--------------------------------------------------------------------------------
+---
 <br><br>
 # 2. LSTM (Long Short-Term Memory)
 
