@@ -36,7 +36,7 @@ Published: 2026-05-30
 </p>
 
 
-<p> It is simply fascinating how integrating technology in day to day processes is crucial for our collective future and sustainability of infrastructures. Deep learning methods as a general concept are considered computation intensive or somewhat scary when it comes to low level applications but not an impossibility. `Recently I have been exploring from the plethora of ML & DL techniques and new research to extract a few commonly used techniques that are being deployed and utilized for various maintenance and monitoring applications. So if you are interested to be aware of some core DL methodologies for IoT or edge computing devices for various applications such as AI based monitering and predictive maintaince. Each ML framework is specialized application categories as tabulated in the table below: You ll find this introduction useful for holistic view; </p>
+It is simply fascinating how integrating technology in day to day processes is crucial for our collective future and sustainability of infrastructures. Deep learning methods as a general concept are considered computation intensive or somewhat scary when it comes to low level applications but not an impossibility. `Recently I have been exploring from the plethora of ML & DL techniques and new research to extract a few commonly used techniques that are being deployed and utilized for various maintenance and monitoring applications. So if you are interested to be aware of some core DL methodologies for IoT or edge computing devices for various applications such as AI based monitering and predictive maintaince. Each ML framework is specialized application categories as tabulated in the table below: You ll find this introduction useful for holistic view; 
 
 <!--
 
@@ -61,18 +61,18 @@ Published: 2026-05-30
     <tr>
       <td>LSTM</td>
       <td>Sequential/time-series prediction</td>
-    <tr>
+    </tr>
     <tr>
       <td>CNN</td>
       <td>Signal/Image feature extraction </td>
-    <tr>
+    </tr>
     <tr>
       <td>Transformers</td>
       <td>Long-range temporal relationships</td>
     </tr>
 </table>
           
-<p>
+
 The choice of model depends on:
 - Sensor type,
 - Compute power,
@@ -80,7 +80,7 @@ The choice of model depends on:
 - and whether inference runs on:
   - Microcontrollers,
   - Edge gateways,
-  - or Cloud Servers.</p>
+  - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
