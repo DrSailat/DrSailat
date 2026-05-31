@@ -49,7 +49,10 @@ It is simply fascinating how integrating technology in day to day processes is c
 
 -->
 
-  <table border="1">
+<div style="text-align: center;">
+
+<table border="1" style="margin-left:auto; margin-right:auto;">
+  <tr>
     <tr>
       <th>Model</th>
       <th>Best Use Cases</th>
@@ -71,16 +74,16 @@ It is simply fascinating how integrating technology in day to day processes is c
       <td>Long-range temporal relationships</td>
     </tr>
 </table>
-          
+</div>        
 
 The choice of model depends on:
-- Sensor type,
-- Compute power,
-- Latency requirements,
-- and whether inference runs on:
-  - Microcontrollers,
-  - Edge gateways,
-  - or Cloud Servers.
+      - Sensor type,
+      - Compute power,
+      - Latency requirements,
+      - and whether inference runs on:
+                                    - Microcontrollers,
+                                    - Edge gateways,
+                                    - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
@@ -95,7 +98,7 @@ The choice of model depends on:
 </p>
 
 _________________________________________________________________________________________
-
+<br><br>
 # 1.   AUTOENCODES
 
 An Autoencoder is an unsupervised learning model most frequently used as an anomaly detector. 
@@ -121,7 +124,7 @@ Most common Industrial use cases are:
 
 
 -------------------------------------------------------------------------------
-
+<br><br>
 # 2. LSTM (Long Short-Term Memory)
 
 LSTM as we know is best known as an ML technique applied for time series data or sequential data to examine trends and has been widely used across racing applications to forecasting. Unlike traditional Neural Networks which typically don't remember previous inputs, LSTM have memory and don't forget previous inputs. Therefore contains "memory cells“, “gates”  and “hidden states”  which enable it possible to predict or estimate  compound behaviour over time.
