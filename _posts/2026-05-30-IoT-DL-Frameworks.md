@@ -3,6 +3,23 @@ layout: Article
 title: "Notes on IoT/Edge Deep Learning Framework- Introduction"
 date: 2026-05-30
 ---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<script async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
 # Notes on IoT/Edge Deep Learning Framework- Introduction!
 By Dr. Saira Latif,
 Published: 2026-05-30
@@ -18,7 +35,6 @@ Published: 2026-05-30
 
 </p>
 
-____________________________________________
 
 It is simply fascinating how integrating technology in day to day processes is crucial for our collective future and sustainability of infrastructures. Deep learning methods as a general concept are considered computation intensive or somewhat scary when it comes to low level applications but not an impossibility. `Recently I have been exploring from the plethora of ML & DL techniques and new research to extract a few commonly used techniques that are being deployed and utilized for various maintenance and monitoring applications. So if you are interested to be aware of some core DL methodologies for IoT or edge computing devices for various applications such as AI based monitering and predictive maintaince. Each ML framework is specialized application categories as tabulated in the table below: You ll find this introduction useful for holistic view;
 
@@ -69,9 +85,9 @@ Unlike supervised learning, autoencoders do not require labeling or classificati
 
 The autoencoder is trained to learn normal system behavior by reconstructing input data. During inference, new data is passed through the model, and it produces a reconstructed output.
 The difference between input and output is measured using reconstruction error:
-
-                L = || x -x||²
-
+$$
+L = \| x - \hat{x} \|^2
+$$
 If “L” : the reconstruction error is  higher than statistically defined threshold , it indicates that the input deviates from learned normal patterns, suggesting a possible anomaly or machine fault. Otherwise, the system is considered operating normally.
 Most common Industrial use cases are:
 - Bearing Fault Detection i-e normal vibration vs abnormal vibrations
