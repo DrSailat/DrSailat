@@ -136,6 +136,14 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 
 ## 2.2 LSTM Components:
 
+| Concept          |  Form |
+|------------------|--------------|
+| Candidate memory | $\tilde{C}_t$ |
+| Forget gate      | $f_t$ |
+| Input gate       | $i_t$ |
+| Memory update    | $C_t = f_t C_{t-1} + i_t \tilde{C}_t$ |
+
+
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
   
@@ -159,3 +167,79 @@ $$
 
 This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks information if close to 0 and allows information if close to 1 and partially passes information if in between.
 
+
+#### 2.2.1.1  Forget Gate
+It is to decide which old memory should be removed and is defined by sigmoid function equation:
+
+$$
+f_t = \sigma\left(W_f [h_{t-1}, x_t] + b_f\right)
+$$
+
+where :
+
+            - $x_t$ = current input  
+            - $h_{t-1}$ = previous hidden state  
+            - $W_f$ = weights  
+            - $b_f$ = bias  
+
+If “ $f_t$ “ close to 0 forget and if “ $f_t$  " close to 1 , keep it.
+
+#### 2.2.1.2    Input Gate
+It is to decide what new information to be stored and also defined by sigmoid function equation:
+
+$$
+i_t = \sigma\left(W_i [h_{t-1}, x_t] + b_i\right)
+$$
+
+where:
+            - $i_t$ = input gate activation  
+            - $x_t$ = current input  
+            - $h_{t-1}$ = previous hidden state  
+            - $W_i$ = input gate weight matrix  
+            - $b_i$ = bias term
+
+#### 2.2.1.3  Output Gate
+It decides on output and also defined by sigmoid function equation:
+
+$$
+o_t = \sigma\left(W_o [h_{t-1}, x_t] + b_o\right)
+$$
+
+where:
+          - $o_t$ = output gate activation  
+          - $x_t$ = current input  
+          - $h_{t-1}$ = previous hidden state  
+          - $W_o$ = output gate weights  
+          - $b_o$ = bias term
+
+
+
+### 2.2.2  Memory Cells
+
+
+#### 2.2.2.1    Candidate Memory
+The candidate memory represents potential new information:
+
+$$
+\tilde{C}_t = \tanh\left(W_c [h_{t-1}, x_t] + b_c\right)
+$$
+
+#### 2.2.2.2  Updated Memory State
+This is the core of LSTM and combines old memory with new information:
+
+$$
+C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t
+$$
+
+Input gate multiplies candidate memory, not old memory.
+
+
+ ### 2.2.3  Hidden states
+
+It is where final output is delivered by LSTM defined by equation:
+
+$$
+h_t = o_t \cdot \tanh(C_t)
+$$
+
+There are several variants of LSTMs with different architecture designs based on the same principles as discussed. One such commonly used variant is GRU base LSTM. For an intuitive and simple understanding of LSTM in detail, Colah's blog on "Understanding LSTM” is a good reference.
