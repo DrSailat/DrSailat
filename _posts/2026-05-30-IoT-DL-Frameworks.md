@@ -234,8 +234,8 @@ where:
 - $W_o$ = output gate weights  
 - $b_o$ = bias term
 
+<br><br>
 
-***
 ### 2.2.2  Memory Cells
 
 
@@ -255,7 +255,7 @@ $$
 
 Input gate multiplies candidate memory, not old memory.
 
-***
+<br><br>
 ### 2.2.3  Hidden states
 
 It is where final output is delivered by LSTM defined by equation:
@@ -265,3 +265,5 @@ h_t = o_t \cdot \tanh(C_t)
 $$
 
 There are several variants of LSTMs with different architecture designs based on the same principles as discussed. One such commonly used variant is GRU base LSTM. For an intuitive and simple understanding of LSTM in detail, Colah's blog on "Understanding LSTM” is a good reference.
+---
+<br><br>
