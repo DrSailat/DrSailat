@@ -480,8 +480,8 @@ Neural network activations can become:
                   
 This slows or breaks learning. Normalize activations:mean ≈ 0, variance ≈ 1
 
-###Reference: 
-Attention Is All You Need 
-   https://arxiv.org/abs/1706.03762?utm_source=chatgpt.com
+### Reference: 
+Attention Is All You Need :
+https://arxiv.org/abs/1706.03762?utm_source=chatgpt.com
 
  
