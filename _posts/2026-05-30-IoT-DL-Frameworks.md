@@ -7,7 +7,7 @@ date: 2026-05-30
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/IoT_Edge_DLFrameworks.jpeg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFrameworks.jpeg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      IoT/Edge DL Frameworks Overview
@@ -40,7 +40,7 @@ The choice of model depends on:
   - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/IoT_Arciteture.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      Architecture for DL based IoT/Edge Use Cases
@@ -89,7 +89,7 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 ## 2.2 LSTM Components:
 
  <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/LASTM.jpg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      Architecture for DL based IoT/Edge Use Cases
