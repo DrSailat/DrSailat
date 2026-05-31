@@ -67,8 +67,8 @@ The choice of model depends on:
 
 </p>
 
-
-
+_________________________________________________________________________________________
+<br><br>
 
 # 1.   AUTOENCODES
 
@@ -94,8 +94,8 @@ Most common Industrial use cases are:
 - Thermal Anomaly Detection - Machine Fault
 
 
-
-
+-------------------------------------------------------------------------------
+<br><br>
 
 
 # 2. LSTM (Long Short-Term Memory)
