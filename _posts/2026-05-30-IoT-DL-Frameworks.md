@@ -293,6 +293,7 @@ A convolutional layer is like a small filter/kernel of suitable size that slides
 Example for filter  or kernel could be:
 
                              [1 0 -1;1 0  -1; 1  0  -1 ]
+							 
 Mathematically :
 
 $$
