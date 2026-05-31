@@ -51,7 +51,7 @@ It is simply fascinating how integrating technology in day to day processes is c
 
 <div style="text-align: center;">
 
-<table border="1" style="margin-left:auto; margin-right:auto;">
+<table border="1" style="border-collapse: auto; margin-right:auto;">
     <tr>
       <th>Model</th>
       <th>Best Use Cases</th>
@@ -116,9 +116,9 @@ Unlike supervised learning, autoencoders do not require labeling or classificati
 The autoencoder is trained to learn normal system behavior by reconstructing input data. During inference, new data is passed through the model, and it produces a reconstructed output.
 The difference between input and output is measured using reconstruction error:
 
-                        $$
-                        L = \| x - \hat{x} \|^2
-                        $$
+$$
+L = \| x - \hat{x} \|^2
+$$
 
 If “L” : the reconstruction error is  higher than statistically defined threshold , it indicates that the input deviates from learned normal patterns, suggesting a possible anomaly or machine fault. Otherwise, the system is considered operating normally.
 Most common Industrial use cases are:
@@ -163,6 +163,7 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 </table>
 
 
+                       
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
   
@@ -191,9 +192,9 @@ This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks infor
 #### 2.2.1.1  Forget Gate
 It is to decide which old memory should be removed and is defined by sigmoid function equation:
 
-  $$
-  f_t = \sigma\left(W_f [h_{t-1}, x_t] + b_f\right)
-  $$
+$$
+f_t = \sigma\left(W_f [h_{t-1}, x_t] + b_f\right)
+$$
 
 where :
 
