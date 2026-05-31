@@ -235,7 +235,7 @@ where:
 - $b_o$ = bias term
 
 
-
+***
 ### 2.2.2  Memory Cells
 
 
@@ -255,7 +255,7 @@ $$
 
 Input gate multiplies candidate memory, not old memory.
 
-
+***
 ### 2.2.3  Hidden states
 
 It is where final output is delivered by LSTM defined by equation:
