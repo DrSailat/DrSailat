@@ -284,7 +284,7 @@ CCN works on images and identifies edges, shapes and spatial patterns.
  
     | Input Image→ Convolution  → Activation → Pooling →Feature Maps →  Fully Connected Layer → Output/Classification |
 
-### 3.2.1 Iput Images
+### 3.2.1 Input Images
 Input images provided for CNN could be 64x64 grayscale or 64x54x3RGB
 For training/testing/evulation purposes use mINSt dataset.
 
