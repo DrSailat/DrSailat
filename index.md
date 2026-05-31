@@ -9,7 +9,9 @@
 
 <script async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>---
+</script>
+
+---
 layout: default
 title: Dr. Saira Latif's Blog
 ---
