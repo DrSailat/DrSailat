@@ -82,9 +82,9 @@ The choice of model depends on:
       - Compute power,
       - Latency requirements,
       - and whether inference runs on:
-                                    - Microcontrollers,
-                                    - Edge gateways,
-                                    - or Cloud Servers.
+                              - Microcontrollers,
+                              - Edge gateways,
+                              - or Cloud Servers.
 
  <div style="text-align:center; margin-bottom:50px;">
   <img src="{{ site.baseurl }}/assets/images/IoT_Arciteture.jpg" width="40%">
@@ -107,7 +107,7 @@ An Autoencoder is an unsupervised learning model most frequently used as an anom
 For decades and so, Autoencoders have been a buzz word in AI and Robotics. All of Us who have been in conferences and seminars and other interactions with domain experts, Autoencoders are one of those few words that come up in discussion over and over again and a fantastic concept and technique mainly used for anomaly detection,compression, unsupervised learning.
 Unlike supervised learning, autoencoders do not require labeling or classification. The model learns underlying patterns, structure and correlation. It  extracts main features as a first step known as compression and generates latent representation/vector and then reconstructs it back as close to original data(decoder) . 
 
-  |  Input → Encoder → Latent Space → Decoder → Reconstructed Output |
+              |  Input → Encoder → Latent Space → Decoder → Reconstructed Output |
  
 
 ## 1.1 Core Idea
@@ -115,13 +115,16 @@ Unlike supervised learning, autoencoders do not require labeling or classificati
 
 The autoencoder is trained to learn normal system behavior by reconstructing input data. During inference, new data is passed through the model, and it produces a reconstructed output.
 The difference between input and output is measured using reconstruction error:
-$$
-L = \| x - \hat{x} \|^2
-$$
+
+          $$
+          L = \| x - \hat{x} \|^2
+          $$
+
 If “L” : the reconstruction error is  higher than statistically defined threshold , it indicates that the input deviates from learned normal patterns, suggesting a possible anomaly or machine fault. Otherwise, the system is considered operating normally.
 Most common Industrial use cases are:
-- Bearing Fault Detection i-e normal vibration vs abnormal vibrations
-- Thermal Anomaly Detection - Machine Fault
+
+        - Bearing Fault Detection i-e normal vibration vs abnormal vibrations
+        - Thermal Anomaly Detection - Machine Fault
 
 
 ---
@@ -175,9 +178,10 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
 ### 2.2.1 LSTM's Gates
 
 LSTM controls information flow using gates namely Forget Gate, Input gate and Output gates. Each gate is a small neural network with a Sigmoid activation function. Sigmoid Activation Function output: 
-$$
-\sigma(x) = \frac{1}{1 + e^{-x}} 
-$$
+
+        $$
+        \sigma(x) = \frac{1}{1 + e^{-x}} 
+        $$
 
 
 This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks information if close to 0 and allows information if close to 1 and partially passes information if in between.
@@ -186,9 +190,9 @@ This function outputs values between 0 and 1 i-e 0 0< σ(x) < 1. It blocks infor
 #### 2.2.1.1  Forget Gate
 It is to decide which old memory should be removed and is defined by sigmoid function equation:
 
-$$
-f_t = \sigma\left(W_f [h_{t-1}, x_t] + b_f\right)
-$$
+        $$
+        f_t = \sigma\left(W_f [h_{t-1}, x_t] + b_f\right)
+        $$
 
 where :
 
@@ -237,16 +241,16 @@ where:
 #### 2.2.2.1    Candidate Memory
 The candidate memory represents potential new information:
 
-$$
-\tilde{C}_t = \tanh\left(W_c [h_{t-1}, x_t] + b_c\right)
-$$
+        $$
+        \tilde{C}_t = \tanh\left(W_c [h_{t-1}, x_t] + b_c\right)
+        $$
 
 #### 2.2.2.2  Updated Memory State
 This is the core of LSTM and combines old memory with new information:
 
-$$
-C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t
-$$
+        $$
+        C_t = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t
+        $$
 
 Input gate multiplies candidate memory, not old memory.
 
@@ -255,8 +259,8 @@ Input gate multiplies candidate memory, not old memory.
 
 It is where final output is delivered by LSTM defined by equation:
 
-$$
-h_t = o_t \cdot \tanh(C_t)
-$$
+        $$
+        h_t = o_t \cdot \tanh(C_t)
+        $$
 
 There are several variants of LSTMs with different architecture designs based on the same principles as discussed. One such commonly used variant is GRU base LSTM. For an intuitive and simple understanding of LSTM in detail, Colah's blog on "Understanding LSTM” is a good reference.
