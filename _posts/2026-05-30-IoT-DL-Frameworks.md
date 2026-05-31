@@ -66,6 +66,7 @@ It is simply fascinating how integrating technology in day to day processes is c
     <td>CNN</td>
     <td>Signal/Image feature extraction </td>
   <tr>
+    <tr>
     <td>Transformers</td>
     <td>Long-range temporal relationships</td>
   </tr>
