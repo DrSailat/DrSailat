@@ -20,7 +20,7 @@ date: 2026-05-30
 
 
 
-# Notes on IoT/Edge Deep Learning Architectures/Models Introduction!
+# Notes on IoT/Edge Deep Learning Architectures/Models- Introduction!
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
