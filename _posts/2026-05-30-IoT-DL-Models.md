@@ -24,7 +24,7 @@ date: 2026-05-30
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFrameworks.jpeg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DL Architectures/Models.jpeg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
      IoT/Edge DL Frameworks Overview
@@ -282,7 +282,7 @@ CCN works on images and identifies edges, shapes and spatial patterns.
 
 ## 3.2  Components
  
-    | Input Image→ Convolution  → Activation → Pooling →Feature Maps →  Fully Connected Layer → Output/Classification |
+| Input Image -> Convolution -> Activation -> Pooling  → Feature Maps → Fully Connected Layer → Output/Classification |
 
 ### 3.2.1 Input Images
 Input images provided for CNN could be 64x64 grayscale or 64x54x3RGB
