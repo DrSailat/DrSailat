@@ -2,13 +2,20 @@
 ---
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse !important;
+  margin-bottom: 1rem;
 }
 
-table, th, td {
-    border: 1px solid #666;
+table th,
+table td {
+  border: 1px solid #dfe2e5 !important;
+  padding: 6px 13px;
 }
 
-th, td {
-    padding: 8px;
+table tr {
+  border-top: 1px solid #c6cbd1 !important;
+}
+
+table thead th {
+  border-bottom: 2px solid #c6cbd1 !important;
 }
