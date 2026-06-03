@@ -24,10 +24,10 @@ date: 2026-05-30
 By Dr. Saira Latif,
 Published: 2026-05-30
   <div style="text-align:center; margin-bottom:50px;">
-  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DL Architectures/Models.jpeg" width="40%">
+  <img src="{{ site.baseurl }}/assets/images/IoT_Edge_DLFrameworks.jpeg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
-     IoT/Edge DL Frameworks Overview
+     IoT/Edge DL Architectures/Models Overview
   </div>
 </div>
 
