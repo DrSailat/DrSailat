@@ -271,6 +271,7 @@ $$
 There are several variants of LSTMs with different architecture designs based on the same principles as discussed. One such commonly used variant is GRU base LSTM. For an intuitive and simple understanding of LSTM in detail, Colah's blog on "Understanding LSTM” is a good reference.
 
 <br><br>
+
 ---
 
 # 3.   CNN- Convolutional Neural Networks
@@ -500,12 +501,12 @@ FFN(x) = W_2 \, \phi(W_1x + b_1) + b_2
 $$
 
 where:
-x = input vector
-W_1​ = first weight matrix
-b_1​ = first bias vector
-\phi = activation function (ReLU, GELU(Gaussian cumulative distribution function), etc.)
-W_2​ = second weight matrix
-b_2​ = second bias vector
+$x$ = input vector
+$W_1​$ = first weight matrix
+$b_1$​ = first bias vector
+$\phi$ = activation function (ReLU, GELU(Gaussian cumulative distribution function), etc.)
+$W_2​$ = second weight matrix
+$b_2$​ = second bias vector
 
 
 ## Feed Forward Network (FFN)
