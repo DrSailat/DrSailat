@@ -124,8 +124,8 @@ $$
 If “L” : the reconstruction error is  higher than statistically defined threshold , it indicates that the input deviates from learned normal patterns, suggesting a possible anomaly or machine fault. Otherwise, the system is considered operating normally.
 Most common Industrial use cases are:
 
-                        - Bearing Fault Detection i-e normal vibration vs abnormal vibrations
-                        - Thermal Anomaly Detection - Machine Fault
+				- Bearing Fault Detection i-e normal vibration vs abnormal vibrations
+				- Thermal Anomaly Detection - Machine Fault
 
 
 ---
@@ -480,6 +480,319 @@ Neural network activations can become:
                   - unstable during training
                   
 This slows or breaks learning. Normalize activations:mean ≈ 0, variance ≈ 1
+
+
+## 4.6 Feed Forward Network (FFN)
+One of the most important universal Approximation theorem  theorems in neural networks is Feed Forward Network.:
+A feed-forward network with sufficient hidden units can approximate almost any continuous function.
+
+(The Feed Forward Network (FFN) is often overshadowed by discussion on  attention, but in a Transformer it is a major component. In fact, a large fraction of the model's parameters are in the FFNs.	
+
+An FFN is simply a small neural network applied independently to each token after the attention layer. Attention layers take information from all tokens while FFN processes and translate them into meaningful features or results.
+The FFN typically consists of three layers”
+
+			Linear Layer → Activation Function → Linear Layer
+
+
+In Transformer Feed Forward Network (FFN) is:
+$$
+FFN(x) = W_2 \, \phi(W_1x + b_1) + b_2
+$$
+
+where:
+x = input vector
+W_1​ = first weight matrix
+b_1​ = first bias vector
+\phi = activation function (ReLU, GELU(Gaussian cumulative distribution function), etc.)
+W_2​ = second weight matrix
+b_2​ = second bias vector
+
+
+## Feed Forward Network (FFN)
+
+The Feed Forward Network (FFN) in a Transformer consists of:
+
+```text
+Linear Layer
+    ↓
+Activation Function
+    ↓
+Linear Layer
+```
+
+### Step-by-Step Equation Decomposition
+
+#### First Linear Layer
+
+$$
+z = W_1x + b_1
+$$
+
+where:
+
+- $x$ = input vector
+- $W_1$ = first weight matrix
+- $b_1$ = first bias vector
+
+#### Activation Function
+
+$$
+a = \phi(z)
+$$
+
+where $\phi$ is a nonlinear activation function.
+
+Historically, the Rectified Linear Unit (ReLU) was commonly used:
+
+$$
+\text{ReLU}(x) = \max(0,x)
+$$
+
+This means:
+
+$$
+\text{ReLU}(x) =
+\begin{cases}
+0, & x < 0 \\
+x, & x \ge 0
+\end{cases}
+$$
+
+Modern Transformer architectures often use the Gaussian Error Linear Unit (GELU):
+
+$$
+\text{GELU}(x) = x \Phi(x)
+$$
+
+where:
+
+$$
+\Phi(x)
+$$
+
+is the cumulative distribution function (CDF) of the standard normal distribution.
+
+A commonly used approximation of GELU is:
+
+$$
+\text{GELU}(x)
+\approx
+0.5x
+\left(
+1 +
+\tanh
+\left(
+\sqrt{\frac{2}{\pi}}
+\left(
+x + 0.044715x^3
+\right)
+\right)
+\right)
+$$
+
+#### Second Linear Layer
+
+$$
+y = W_2a + b_2
+$$
+
+where:
+
+- $W_2$ = second weight matrix
+- $b_2$ = second bias vector
+
+### Complete FFN Equation
+
+Combining all steps:
+
+$$
+FFN(x) = W_2 \phi(W_1x + b_1) + b_2
+$$
+
+The FFN expands the feature space, applies a nonlinear transformation, and projects the representation back to the original embedding dimension.
+
+## Second Linear Layer
+
+$$
+y = W_2 a + b_2
+$$
+
+where:
+
+- $a$ = output of the activation function
+- $W_2$ = second weight matrix
+- $b_2$ = second bias vector
+
+---
+
+## Complete Feed Forward Network (FFN)
+
+Combining all steps:
+
+$$
+FFN(x) = W_2 \, \phi(W_1x + b_1) + b_2
+$$
+
+where:
+
+- $x$ = input vector
+- $W_1, W_2$ = trainable weight matrices
+- $b_1, b_2$ = bias vectors
+- $\phi$ = activation function (ReLU, GELU, etc.)
+
+---
+
+## Residual Connection Around FFN
+
+A residual (skip) connection adds the original input back to the FFN output:
+
+$$
+y = x + FFN(x)
+$$
+
+or equivalently:
+
+$$
+y = x + W_2 \, \phi(W_1x + b_1) + b_2
+$$
+
+### Why Residual Connections?
+
+Residual connections help:
+
+- preserve information from earlier layers
+- improve gradient flow during backpropagation
+- mitigate the vanishing gradient problem
+- enable training of very deep neural networks
+
+The network learns a correction to the input rather than learning an entirely new representation.
+
+---
+
+# Layer Normalization (LayerNorm)
+
+Layer Normalization (LayerNorm) is one of the key components that makes Transformers train stably.
+
+Without LayerNorm:
+
+- activations can become very large
+- activations can become very small
+- gradients can become unstable
+- training can become difficult
+
+LayerNorm performs:
+
+```text
+Normalize
+    ↓
+Scale
+    ↓
+Shift
+```
+
+LayerNorm standardizes the values within a token vector, making optimization easier and keeping activations numerically stable.
+
+---
+
+## Step 1: Compute Mean
+
+$$
+\mu = \frac{1}{d}\sum_{i=1}^{d}x_i
+$$
+
+where:
+
+- $d$ = number of features
+- $x_i$ = i-th feature value
+
+---
+
+## Step 2: Compute Variance
+
+$$
+\sigma^2 = \frac{1}{d}\sum_{i=1}^{d}(x_i-\mu)^2
+$$
+
+where:
+
+- $\mu$ = mean
+- $\sigma^2$ = variance
+
+---
+
+## Step 3: Normalize
+
+$$
+\hat{x}_i =
+\frac{x_i-\mu}
+{\sqrt{\sigma^2+\epsilon}}
+$$
+
+where:
+
+- $\epsilon$ is a small constant (e.g., $10^{-5}$) used to avoid division by zero
+
+---
+
+## Step 4: Scale and Shift
+
+LayerNorm includes learnable parameters:
+
+- $\gamma$ = scale parameter
+- $\beta$ = shift (bias) parameter
+
+The final output becomes:
+
+$$
+y_i = \gamma_i \hat{x}_i + \beta_i
+$$
+
+---
+
+## Complete LayerNorm Equation
+
+$$
+LayerNorm(x)
+=
+\gamma \odot
+\frac{x-\mu}
+{\sqrt{\sigma^2+\epsilon}}
++\beta
+$$
+
+where:
+
+- $\mu$ = mean
+- $\sigma^2$ = variance
+- $\gamma$ = learned scale parameter
+- $\beta$ = learned shift parameter
+- $\odot$ = element-wise multiplication
+
+---
+
+## Transformer Block with FFN and LayerNorm
+
+The FFN output is typically combined with a residual connection and then normalized:
+
+$$
+h = LayerNorm(x + FFN(x))
+$$
+
+Substituting the FFN equation:
+
+$$
+h =
+LayerNorm
+\left(
+x +
+W_2 \, \phi(W_1x+b_1)
++
+b_2
+\right)
+$$
+
+This is one of the core computations performed inside a Transformer layer.
+
 
 ### Reference: 
 Attention Is All You Need :
