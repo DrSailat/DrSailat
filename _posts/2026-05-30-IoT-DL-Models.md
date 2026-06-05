@@ -508,9 +508,6 @@ $\phi$ = activation function (ReLU, GELU(Gaussian cumulative distribution functi
 $W_2​$ = second weight matrix
 $b_2$​ = second bias vector
 
-
-## Feed Forward Network (FFN)
-
 The Feed Forward Network (FFN) in a Transformer consists of:
 
 ```text
@@ -521,7 +518,7 @@ Activation Function
 Linear Layer
 ```
 
-### Step-by-Step Equation Decomposition
+### Step-by-Step Equation Decomposition & Understanding
 
 #### First Linear Layer
 
@@ -602,31 +599,9 @@ where:
 - $W_2$ = second weight matrix
 - $b_2$ = second bias vector
 
-### Complete FFN Equation
 
-Combining all steps:
-
-$$
-FFN(x) = W_2 \phi(W_1x + b_1) + b_2
-$$
 
 The FFN expands the feature space, applies a nonlinear transformation, and projects the representation back to the original embedding dimension.
-
-## Second Linear Layer
-
-$$
-y = W_2 a + b_2
-$$
-
-where:
-
-- $a$ = output of the activation function
-- $W_2$ = second weight matrix
-- $b_2$ = second bias vector
-
----
-
-## Complete Feed Forward Network (FFN)
 
 Combining all steps:
 
@@ -640,8 +615,8 @@ where:
 - $W_1, W_2$ = trainable weight matrices
 - $b_1, b_2$ = bias vectors
 - $\phi$ = activation function (ReLU, GELU, etc.)
-
----
+- 
+The FFN expands the feature space, applies a nonlinear transformation, and projects the representation back to the original embedding dimension.
 
 ## Residual Connection Around FFN
 
@@ -668,7 +643,6 @@ Residual connections help:
 
 The network learns a correction to the input rather than learning an entirely new representation.
 
----
 
 # Layer Normalization (LayerNorm)
 
@@ -693,8 +667,6 @@ Shift
 
 LayerNorm standardizes the values within a token vector, making optimization easier and keeping activations numerically stable.
 
----
-
 ## Step 1: Compute Mean
 
 $$
@@ -706,7 +678,6 @@ where:
 - $d$ = number of features
 - $x_i$ = i-th feature value
 
----
 
 ## Step 2: Compute Variance
 
@@ -719,7 +690,6 @@ where:
 - $\mu$ = mean
 - $\sigma^2$ = variance
 
----
 
 ## Step 3: Normalize
 
@@ -733,7 +703,6 @@ where:
 
 - $\epsilon$ is a small constant (e.g., $10^{-5}$) used to avoid division by zero
 
----
 
 ## Step 4: Scale and Shift
 
@@ -748,7 +717,6 @@ $$
 y_i = \gamma_i \hat{x}_i + \beta_i
 $$
 
----
 
 ## Complete LayerNorm Equation
 
@@ -771,7 +739,7 @@ where:
 
 ---
 
-## Transformer Block with FFN and LayerNorm
+## Transformer Blocks with FFN and LayerNorm
 
 The FFN output is typically combined with a residual connection and then normalized:
 
@@ -796,7 +764,10 @@ This is one of the core computations performed inside a Transformer layer.
 
 
 ### Reference: 
-Attention Is All You Need :
-https://arxiv.org/abs/1706.03762?utm_source=chatgpt.com
+- Attention Is All You Need :
+	https://arxiv.org/abs/1706.03762?utm_source=chatgpt.com
+- MIT Notes: 
+6.390 - Intro to Machine Learning
+https://introml.mit.edu/notes/transformers.html
 
  
