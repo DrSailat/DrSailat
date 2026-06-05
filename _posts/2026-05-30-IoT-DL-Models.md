@@ -169,7 +169,7 @@ LSTM works on time-dependent sequences and  identifies temporal patterns. It use
   <img src="{{ site.baseurl }}/assets/images/LASTM.jpg" width="40%">
   
   <div style="margin-top:10px; font-size:0.9em;">
-     Architecture for DL based IoT/Edge Use Cases
+     LSTM's General Architecture 
   </div>
 </div>
 
