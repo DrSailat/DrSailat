@@ -1,6 +1,8 @@
 ---
 layout: default
+title: Home
 ---
+
 <script>
   window.MathJax = {
     tex: {
@@ -13,12 +15,8 @@ layout: default
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
-
-
-
 ## Articles
 
-{% for Article in site.posts %}
-- [{{ Article.title }}]({{ Article.url | relative_url }})
-  
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | relative_url }})
 {% endfor %}
