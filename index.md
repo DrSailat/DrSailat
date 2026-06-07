@@ -4,20 +4,10 @@ title: Dr. Saira Latif's Blog
 description: AI, Robotics, Technology, Well-being
 ---
 
-# Dr. Saira Latif's Blog
-
 Welcome to my space where I explore **AI, Robotics, Technology, and Well-being**.
 
 ---
 
-## ✨ Featured Areas
-
-- 🤖 Artificial Intelligence & Machine Learning  
-- 🦾 Robotics & Autonomous Systems  
-- 🧠 Human-centered AI  
-- 🌿 Well-being & Technology balance  
-
----
 
 ## 📚 Latest Articles
 
