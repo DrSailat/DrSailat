@@ -1,4 +1,28 @@
+---
+layout: Article
+title: "Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction"
+date(yy-m-d): 2026-06-07
+---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 
+<script async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+# Notes on IoT/Edge Deep Learning Architectures/Models- Introduction!
+By Dr. Saira Latif,
+Published: 2026-05-30
 # IoT/Edge Deep Learning Frameworks/Tools - Introductions
 
 Deep Learning pipeline as generally can be summarized as: 
