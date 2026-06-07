@@ -1,7 +1,7 @@
 ---
 layout: Article
 title: "Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction"
-date(yy-m-d): 2026-06-07
+date(yy-mm-dd): 2026-06-07
 ---
 <script>
   window.MathJax = {
@@ -22,7 +22,7 @@ date(yy-m-d): 2026-06-07
 
 # Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction!
 By Dr. Saira Latif,
-Published: 2026-05-30
+Published: 2026-06-07
 
 
 # IoT/Edge Deep Learning Frameworks/Tools - Introductions
