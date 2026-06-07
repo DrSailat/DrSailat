@@ -17,9 +17,6 @@ Welcome to my space where I explore **AI, Robotics, Technology, and Well-being**
 
 ---
 
-## 📊 About This Blog
-
-This blog shares research insights, engineering perspectives, and reflections on intelligent systems and human well-being.
 
 ---
 
