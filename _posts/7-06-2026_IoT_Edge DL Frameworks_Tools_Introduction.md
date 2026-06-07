@@ -20,9 +20,11 @@ date(yy-m-d): 2026-06-07
 
 
 
-# Notes on IoT/Edge Deep Learning Architectures/Models- Introduction!
+# Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction!
 By Dr. Saira Latif,
 Published: 2026-05-30
+
+
 # IoT/Edge Deep Learning Frameworks/Tools - Introductions
 
 Deep Learning pipeline as generally can be summarized as: 
