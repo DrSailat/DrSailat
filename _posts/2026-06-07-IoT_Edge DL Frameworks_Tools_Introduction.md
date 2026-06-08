@@ -29,43 +29,45 @@ Published: 2026-06-07
 
 Deep Learning pipeline as generally can be summarized as: 
 
-    Dataset → Tensor → Neural Network → Prediction → Loss Function → Backpropagation → Optimizer → Update Weight 
+    **Dataset** → **Tensor** → **Neural Network** → **Prediction** → **Loss Function** → **Backpropagation** → **Optimizer** → **Update Weight**
 
  is implemented by DL frameworks 
 
 Frameworks are a set of tools to implement models or architectures primarily in python. In deep learning applications these frameworks support curating datasets(handling), compute related operations, import and implement neural network models, functions for training, testing of these models for several applications conveniently without  need for grassroot coding. Some commonly used frameworks/libraries include 
-- Pythorch
-- Tensor Flow/Keras
-- TensorFlow Lite/ONNX runtime
+
+                    - Pythorch
+                    - Tensor Flow/Keras
+                    - TensorFlow Lite/ONNX runtime
 
 ## Connection hierarchy  
 
-    PyTorch
-   
-    └── Complete framework
-
-    TensorFlow
-
-    └── Complete framework
-
-      └── Keras (high-level interface)
+                              **PyTorch**
+                             
+                              └── Complete framework
+                          
+                              **TensorFlow**
+                          
+                              └── Complete framework
+                          
+                                └── **Keras** (high-level interface)
 
 TensorFlow and PyTorch can often be used as alternatives to each other, because both are full-featured deep learning frameworks capable of training and deploying neural networks but slightly different in programming style.PyTorch is generally considered more Pythonic and intuitive.TensorFlow offers a larger deployment ecosystem:
 
-- TensorFlow Lite for mobile and edge devices
-- TensorFlow Serving for production serving
-- TensorFlow Extended (TFX) for MLOps pipelines
+                      - TensorFlow Lite for mobile and edge devices
+                      - TensorFlow Serving for production serving
+                      - TensorFlow Extended (TFX) for MLOps pipelines
 
 PyTorch  is currently the dominant framework in  AI research, robotics, autonomous systems, and modern LLMs. TensorFlow has a strong ecosystem for  industrial deployment and embedded AI production systems and edge devices.For beginners Keras: provides easy user end interface for  For beginners for easiest way to start building neural networks.
 
 A practical rule is:
-
-- Use PyTorch → when to learn deep learning concepts and build models.
-- Use TensorFlow/Keras → useful when deploying to mobile or embedded devices.
-- TensorFlow Lite / ONNX Runtime → deploy trained models on edge devices such as Raspberry Pi, Jetson, and microcontroller-adjacent systems.
+                      
+                      - Use PyTorch → when to learn deep learning concepts and build models.
+                      - Use TensorFlow/Keras → useful when deploying to mobile or embedded devices.
+                      - TensorFlow Lite / ONNX Runtime → deploy trained models on edge devices such as Raspberry Pi, Jetson, and microcontroller-adjacent systems.
 
 ## TensorFlow vs Keras vs TensorFlow Lite
-TensorFlow ---> Keras builds models ----> TensorFlow trains models ---> TensorFlow Lite deploys models
+
+            TensorFlow ---> Keras builds models ----> TensorFlow trains models ---> TensorFlow Lite deploys models
 
 ---
 
@@ -86,21 +88,21 @@ Pytorch is a mathematical library for deep learning . In pytorch everything is b
 
 A neural network can be represented mathematically as:
 
-        y=f(x,W)
+                            y=f(x,W)
 
 where:
-
-      * (x) is the input data,
-      * (W) represents the model parameters (weights),
-      * (y) is the predicted output.
+                  
+                        * (x) is the input data,
+                        * (W) represents the model parameters (weights),
+                        * (y) is the predicted output.
 
 To measure prediction error, a loss function is defined. A common example is the Mean Squared Error (MSE):
 
-        L=(\hat{y}-y)^2
+                                L=(\hat{y}-y)^2
 
 PyTorch uses **automatic differentiation (Autograd)** to compute gradients of the loss with respect to model parameters:
 
-      \frac{\partial L}{\partial W}
+                              \frac{\partial L}{\partial W}
 
 These gradients indicate how the parameters should be adjusted to minimize the loss.
 
@@ -164,16 +166,16 @@ Below is a short summary of the most commonly used optimizers.
 PyTorch training follows the workflow:
 
 ```text
-Tensor → Computation Graph → Gradients → Optimization
+            Tensor → Computation Graph → Gradients → Optimization
 ```
-
-1. Create tensors.
-2. Build a neural network.
-3. Perform a forward pass.
-4. Compute the loss.
-5. Use Autograd to calculate gradients.
-6. Update parameters with an optimizer.
-7. Repeat until the model converges.
+            
+            1. Create tensors.
+            2. Build a neural network.
+            3. Perform a forward pass.
+            4. Compute the loss.
+            5. Use Autograd to calculate gradients.
+            6. Update parameters with an optimizer.
+            7. Repeat until the model converges.
 
 ```
 ```
@@ -424,11 +426,11 @@ Data → Model → Loss → Backpropagation → Update Weights → Repeat
 
 PyTorch computes:
 
-`∂L/∂W`
+                  `∂L/∂W`
 
 using the chain rule:
 
-`∂L/∂W = (∂L/∂y) × (∂y/∂W)`
+                      `∂L/∂W = (∂L/∂y) × (∂y/∂W)`
 
 This allows gradients to flow backward through the network and update parameters efficiently.
 
@@ -480,14 +482,14 @@ PyTorch training follows the workflow:
 ```text
 Tensor → Computation Graph → Gradients → Optimization
 ```
-
-1. Create tensors.
-2. Build a neural network.
-3. Perform a forward pass.
-4. Compute the loss.
-5. Use Autograd to calculate gradients.
-6. Update parameters with an optimizer.
-7. Repeat until the model converges.
+          
+          1. Create tensors.
+          2. Build a neural network.
+          3. Perform a forward pass.
+          4. Compute the loss.
+          5. Use Autograd to calculate gradients.
+          6. Update parameters with an optimizer.
+          7. Repeat until the model converges.
 
 ```
 ```
@@ -516,10 +518,10 @@ Official site:TensorFlow
 
 It helps you:
 
-    - Build neural networks
-    - Train models
-    - Evaluate models
-    - Deploy models
+              - Build neural networks
+              - Train models
+              - Evaluate models
+              - Deploy models
       
 TensorFlow Workflow
 
@@ -527,10 +529,10 @@ TensorFlow Workflow
 
 TensorFlow performs:
 
-    - Forward Pass: y= f(x)
-    - Compute Loss: Example MSE: L= 1n(y-y)2
-    - Backpropagation: Compute gradients: LW
-    - Update Weights: W=W−ηLW
+                    - Forward Pass: y= f(x)
+                    - Compute Loss: Example MSE: L= 1n(y-y)2
+                    - Backpropagation: Compute gradients: LW
+                    - Update Weights: W=W−ηLW
 
 
 
@@ -543,11 +545,12 @@ https://keras.io
 
 
 Keras is a high-level API that runs on top of TensorFlow.
-Think:
 
-      - TensorFlow = Engine
-      - Keras = Steering Wheel
-      - TensorFlow does the heavy lifting.Keras makes it easy to use.
+Think of it like:
+
+          - TensorFlow = Engine
+          - Keras = Steering Wheel
+          - TensorFlow does the heavy lifting.Keras makes it easy to use.
 
 ## With/Without Keras
 
@@ -565,6 +568,7 @@ model = keras.Sequential([
 
 Complete Example:
 Suppose: y=2x
+
 Training data:
 
 ```python
@@ -608,12 +612,12 @@ TensorFlow Lite (TFLite), now part of Google's LiteRT ecosystem, is a framework 
 ### Supported Platforms
 
 TensorFlow Lite is designed for deployment on:
-
-      * Mobile devices (Android and iOS)
-      * Raspberry Pi
-      * Edge AI systems
-      * Embedded systems
-      * Microcontrollers (via TensorFlow Lite Micro)
+                
+                      * Mobile devices (Android and iOS)
+                      * Raspberry Pi
+                      * Edge AI systems
+                      * Embedded systems
+                      * Microcontrollers (via TensorFlow Lite Micro)
 
 ### Why TensorFlow Lite?
 
@@ -643,10 +647,10 @@ For example:
 
 Benefits include:
 
-    * Reduced model size
-    * Faster inference
-    * Lower memory consumption
-    * Lower power consumption
+                      * Reduced model size
+                      * Faster inference
+                      * Lower memory consumption
+                      * Lower power consumption
 
 
 ## Converting a TensorFlow Model to TFLite
