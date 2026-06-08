@@ -200,7 +200,7 @@ C = torch.matmul(A, B)
 ```
 
 
-## Autograd (Most Important Concept)
+## Pytorch Autograd (Most Important Concept)
 
 Autograd automatically computes gradients.
 
@@ -231,7 +231,7 @@ At `x = 2`:
 PyTorch computes this automatically.
 
 
-## Neural Network Module (`torch.nn`)
+## Pytorch Neural Network Module (`torch.nn`)
 
 PyTorch provides neural network functionality through:
 
@@ -239,7 +239,7 @@ PyTorch provides neural network functionality through:
 import torch.nn as nn
 ```
 
-### Simple Neural Network
+### Pytorch Simple Neural Network Example
 
 ```python
 model = nn.Sequential(
@@ -249,7 +249,7 @@ model = nn.Sequential(
 )
 ```
 
-### Forward Pass
+### Pytorch Forward Pass
 
 Mathematically:
 
@@ -262,7 +262,7 @@ y_pred = model(x)
 ```
 
 
-## Loss Functions
+## Pytorch Loss Functions
 
 Loss functions measure prediction error.
 
@@ -274,7 +274,6 @@ Loss functions measure prediction error.
 criterion = nn.MSELoss()
 ```
 
----
 
 ## Optimizers
 
@@ -423,6 +422,11 @@ Tensor → Computation Graph → Gradients → Optimization
 
 ## 2.  What is TensorFlow?
 
+Official Link:
+<a href="https://www.tensorflow.org" target="_blank" rel="noopener">
+https://www.tensorflow.org
+</a>
+
 TensorFlow is a deep learning framework developed by Google AI.
 Official site:TensorFlow
 
@@ -448,8 +452,13 @@ TensorFlow performs:
 
 # 3. What is Keras?
 
+Official Link:
+<a href="https://keras.io" target="_blank" rel="noopener">
+https://keras.io
+</a>
+
+
 Keras is a high-level API that runs on top of TensorFlow.
-Official Link: 
 Think:
 
       - TensorFlow = Engine
@@ -504,6 +513,11 @@ model.predict([5])
 # Edge AI Deployment: TensorFlow Lite, ONNX Runtime, Jetson, and Edge Impulse
 
 ## What is TensorFlow Lite?
+
+Official Link:
+<a href="https://developers.google.com/edge/litert" target="_blank" rel="noopener">
+https://developers.google.com/edge/litert
+</a>
 
 TensorFlow Lite (TFLite), now part of Google's LiteRT ecosystem, is a framework for deploying machine learning and generative AI models on edge devices. It provides efficient model conversion, optimization, and runtime execution for resource-constrained hardware.
 
