@@ -8,7 +8,7 @@ Welcome to my space where I explore **AI, Robotics, Technology, and Well-being**
 
 ---
 ## Research Profiles
-
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
 <a href="https://orcid.org/0000-0002-1951-674X" target="_blank">
   <img src="https://img.shields.io/badge/ORCID-Profile-A6CE39?logo=orcid&logoColor=white">
 </a>
