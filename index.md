@@ -26,6 +26,7 @@ Welcome to my space where I explore **AI, Robotics, Technology, and Well-being**
   <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?logo=linkedin&logoColor=white">
 </a>
 
+</div>
 
 
 
