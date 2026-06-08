@@ -1,6 +1,6 @@
 ---
 layout: Article
-title: "Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction"
+title: "2026-06-07: Notes on IoT/Edge Deep Learning Frameworks/Tools- Introduction"
 date(yy-mm-dd): 2026-06-07
 ---
 <script>
@@ -67,3 +67,752 @@ A practical rule is:
 ## TensorFlow vs Keras vs TensorFlow Lite
 TensorFlow ---> Keras builds models ----> TensorFlow trains models ---> TensorFlow Lite deploys models
 
+# 1. PyTorch- Introduction
+
+PyTorch is a deep learning framework based on tensors + automatic differentiation + GPU acceleration.
+Official: PyTorch, 
+<a href="https://docs.pytorch.org/docs/2.12/index.html" target="_blank" rel="noopener">
+https://docs.pytorch.org/docs/2.12/index.html
+</a>
+
+ 
+## PyTorch Fundamentals: From Tensors to Optimization
+Pytorch is a mathematical library for deep learning . In pytorch everything is built around: 
+
+**Tensor → Computation Graph → Gradients → Optimization**
+
+A neural network can be represented mathematically as:
+
+y=f(x,W)
+
+where:
+
+* (x) is the input data,
+* (W) represents the model parameters (weights),
+* (y) is the predicted output.
+
+To measure prediction error, a loss function is defined. A common example is the Mean Squared Error (MSE):
+
+L=(\hat{y}-y)^2
+
+PyTorch uses **automatic differentiation (Autograd)** to compute gradients of the loss with respect to model parameters:
+
+\frac{\partial L}{\partial W}
+
+These gradients indicate how the parameters should be adjusted to minimize the loss.
+
+PyTorch also provides a rich set of built-in optimization algorithms through the `torch.optim` module. These optimizers automatically update the model parameters during training based on the computed gradients.
+
+Below is a short summary of the most commonly used optimizers.
+
+## Common PyTorch Optimizers
+
+| Optimizer    | Description                                                                    | Advantages                                             |
+| ------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| SGD          | Stochastic Gradient Descent updates parameters using the gradient of the loss. | Simple and memory-efficient.                           |
+| Momentum SGD | Extends SGD by accumulating previous gradients.                                | Faster convergence and reduced oscillations.           |
+| Adagrad      | Adapts the learning rate for each parameter individually.                      | Useful for sparse data.                                |
+| RMSprop      | Uses a moving average of squared gradients.                                    | Handles non-stationary objectives well.                |
+| Adam         | Combines Momentum and RMSprop.                                                 | Most widely used; generally works well out of the box. |
+| AdamW        | Adam with decoupled weight decay.                                              | Better regularization and generalization.              |
+| LBFGS        | Second-order optimization method.                                              | Effective for some small-scale optimization problems.  |
+
+
+
+PyTorch training follows the workflow:
+
+```text
+Tensor → Computation Graph → Gradients → Optimization
+```
+
+1. Create tensors.
+2. Build a neural network.
+3. Perform a forward pass.
+4. Compute the loss.
+5. Use Autograd to calculate gradients.
+6. Update parameters with an optimizer.
+7. Repeat until the model converges.
+
+```
+```
+
+## Tensors (Fundamental Unit)
+
+A tensor is a multi-dimensional array used to store data in PyTorch.
+
+| Type      | Example             |
+| --------- | ------------------- |
+| Scalar    | `5`                 |
+| Vector    | `[1, 2, 3]`         |
+| Matrix    | `[[1, 2], [3, 4]]`  |
+| 3D Tensor | Image `(H × W × C)` |
+
+### Creating Tensors
+
+```python
+import torch
+
+x = torch.tensor([1.0, 2.0, 3.0])
+print(x)
+```
+
+### Tensor with Gradient Tracking
+
+```python
+x = torch.tensor([2.0], requires_grad=True)
+```
+
+This enables **automatic differentiation (Autograd)**.
+
+---
+
+## Basic Operations
+
+### Tensor Addition
+
+Mathematically:
+
+`c = a + b`
+
+```python
+a = torch.tensor([2.0])
+b = torch.tensor([3.0])
+
+c = a + b
+print(c)
+```
+
+### Matrix Multiplication
+
+Mathematically:
+
+`C = AB`
+
+```python
+A = torch.randn(2, 3)
+B = torch.randn(3, 4)
+
+C = torch.matmul(A, B)
+```
+
+---
+
+## Autograd (Most Important Concept)
+
+Autograd automatically computes gradients.
+
+### Example
+
+```python
+x = torch.tensor(2.0, requires_grad=True)
+
+y = x**2 + 3*x + 1
+
+y.backward()
+
+print(x.grad)
+```
+
+For:
+
+`y = x² + 3x + 1`
+
+Derivative:
+
+`dy/dx = 2x + 3`
+
+At `x = 2`:
+
+`dy/dx = 7`
+
+PyTorch computes this automatically.
+
+---
+
+## Neural Network Module (`torch.nn`)
+
+PyTorch provides neural network functionality through:
+
+```python
+import torch.nn as nn
+```
+
+### Simple Neural Network
+
+```python
+model = nn.Sequential(
+    nn.Linear(3, 8),
+    nn.ReLU(),
+    nn.Linear(8, 1)
+)
+```
+
+### Forward Pass
+
+Mathematically:
+
+`y = W₂(W₁x + b₁) + b₂`
+
+```python
+x = torch.randn(1, 3)
+
+y_pred = model(x)
+```
+
+---
+
+## Loss Functions
+
+Loss functions measure prediction error.
+
+### Mean Squared Error (MSE)
+
+`L = (1/n) Σ (ŷ - y)²`
+
+```python
+criterion = nn.MSELoss()
+```
+
+---
+
+## Optimizers
+
+Optimizers update model weights based on gradients.
+
+```python
+import torch.optim as optim
+
+optimizer = optim.Adam(
+    model.parameters(),
+    lr=0.001
+)
+```
+
+Gradient-descent update rule:
+
+`W ← W − η∇L`
+
+### Common Optimizers
+
+| Optimizer    | Description                                    |
+| ------------ | ---------------------------------------------- |
+| SGD          | Basic stochastic gradient descent              |
+| Momentum SGD | Uses previous gradients to accelerate learning |
+| Adagrad      | Adaptive learning rate for each parameter      |
+| RMSprop      | Maintains moving average of squared gradients  |
+| Adam         | Combines Momentum and RMSprop                  |
+| AdamW        | Adam with decoupled weight decay               |
+
+---
+
+## Training Loop (Most Important)
+
+```python
+for epoch in range(100):
+
+    # forward pass
+    y_pred = model(X)
+
+    # compute loss
+    loss = criterion(y_pred, Y)
+
+    # reset gradients
+    optimizer.zero_grad()
+
+    # backward pass
+    loss.backward()
+
+    # update weights
+    optimizer.step()
+
+    print(loss.item())
+```
+
+### Training Flow
+
+```text
+Data → Model → Loss → Backpropagation → Update Weights → Repeat
+```
+
+---
+
+## Backpropagation
+
+PyTorch computes:
+
+`∂L/∂W`
+
+using the chain rule:
+
+`∂L/∂W = (∂L/∂y) × (∂y/∂W)`
+
+This allows gradients to flow backward through the network and update parameters efficiently.
+
+---
+
+## GPU Acceleration
+
+Move models and tensors to the GPU:
+
+```python
+device = torch.device("cuda")
+
+model = model.to(device)
+X = X.to(device)
+Y = Y.to(device)
+```
+
+This significantly speeds up training for large models.
+
+---
+
+## Dataset Handling
+
+PyTorch provides:
+
+* `torch.utils.data.Dataset`
+* `torch.utils.data.DataLoader`
+
+### Example
+
+```python
+from torch.utils.data import DataLoader, TensorDataset
+
+dataset = TensorDataset(X, Y)
+
+loader = DataLoader(
+    dataset,
+    batch_size=32,
+    shuffle=True
+)
+```
+
+The `DataLoader` automatically creates mini-batches and efficiently feeds data to the model during training.
+
+---
+
+## Summary
+
+PyTorch training follows the workflow:
+
+```text
+Tensor → Computation Graph → Gradients → Optimization
+```
+
+1. Create tensors.
+2. Build a neural network.
+3. Perform a forward pass.
+4. Compute the loss.
+5. Use Autograd to calculate gradients.
+6. Update parameters with an optimizer.
+7. Repeat until the model converges.
+
+```
+```
+
+# 2. TensorFlow/Keras/TensorLite
+
+    TensorFlow
+
+      │
+      ├── Keras (easy model-building API)
+      │
+      └── TensorFlow Lite (deployment on edge devices)
+
+
+
+
+## 2.  What is TensorFlow?
+
+TensorFlow is a deep learning framework developed by Google AI.
+Official site:TensorFlow
+
+It helps you:
+
+- Build neural networks
+- Train models
+- Evaluate models
+- Deploy models
+  
+TensorFlow Workflow
+
+        Data → Model → Training → Loss Calculation → Backpropagation → Weight Update → Trained Model
+
+TensorFlow performs:
+
+- Forward Pass: y= f(x)
+- Compute Loss: Example MSE: L= 1n(y-y)2
+- Backpropagation: Compute gradients: LW
+- Update Weights: W=W−ηLW
+
+---
+
+# 3. What is Keras?
+
+Official: Keras
+Keras is a high-level API that runs on top of TensorFlow.
+
+Think:
+
+- TensorFlow = Engine
+- Keras = Steering Wheel
+- TensorFlow does the heavy lifting.
+  
+Keras makes it easy to use.
+
+## With/Without Keras
+
+You would manually build layers, losses, gradients, and optimizers and ended up in Lots of code
+You can create a neural network in a few lines using kers:
+
+```python
+from tensorflow import keras
+
+model = keras.Sequential([
+    keras.layers.Dense(8, activation='relu'),
+    keras.layers.Dense(1)
+])
+```
+
+Complete Example:
+Suppose: y=2x
+Training data:
+
+```python
+import tensorflow as tf
+
+X = [1,2,3,4]
+Y = [2,4,6,8]
+
+Build Model:
+
+model = tf.keras.Sequential([
+tf.keras.layers.Dense(1)]) or tf.keras.layers.Dense(64)
+A dense layer  tf.keras.layers.Dense(64)  performs:y= Wx+b
+Means 64 neurons
+
+Compile Model:
+
+model.compile(optimizer='adam', loss='mse')
+
+Train Model:
+
+model.fit(X, Y, epochs=100)
+
+Predict:
+model.predict([5])
+
+```
+
+
+# Edge AI Deployment: TensorFlow Lite, ONNX Runtime, Jetson, and Edge Impulse
+
+## What is TensorFlow Lite?
+
+TensorFlow Lite (TFLite), now part of Google's LiteRT ecosystem, is a framework for deploying machine learning and generative AI models on edge devices. It provides efficient model conversion, optimization, and runtime execution for resource-constrained hardware.
+
+### Supported Platforms
+
+TensorFlow Lite is designed for deployment on:
+
+* Mobile devices (Android and iOS)
+* Raspberry Pi
+* Edge AI systems
+* Embedded systems
+* Microcontrollers (via TensorFlow Lite Micro)
+
+### Why TensorFlow Lite?
+
+Standard TensorFlow models can be large and computationally expensive.
+
+For example:
+
+| Model Type             | Size             |
+| ---------------------- | ---------------- |
+| TensorFlow Model       | 100 MB           |
+| Optimized TFLite Model | 10 MB or smaller |
+
+Benefits include:
+
+* Reduced model size
+* Faster inference
+* Lower memory consumption
+* Lower power consumption
+
+---
+
+## Converting a TensorFlow Model to TFLite
+
+### Example
+
+```python
+import tensorflow as tf
+
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+
+tflite_model = converter.convert()
+
+# Save model
+with open("model.tflite", "wb") as f:
+    f.write(tflite_model)
+```
+
+---
+
+## TensorFlow Lite on Raspberry Pi
+
+A common deployment pipeline is:
+
+```text
+Sensor
+   ↓
+Raspberry Pi
+   ↓
+TFLite Model
+   ↓
+Prediction
+```
+
+Typical applications include:
+
+* Predictive maintenance
+* Anomaly detection
+* Smart agriculture
+* Industrial monitoring
+* Computer vision
+
+---
+
+## TensorFlow Lite Micro (TinyML)
+
+TensorFlow Lite Micro enables machine learning inference directly on microcontrollers.
+
+### Supported Hardware
+
+* ESP32
+* STM32
+* Arduino
+* ARM Cortex-M devices
+
+### Workflow
+
+```text
+Train in TensorFlow
+        ↓
+Convert to TFLite
+        ↓
+Generate C/C++ Model
+        ↓
+Deploy on Microcontroller
+```
+
+This approach allows AI models to run with only a few kilobytes of memory.
+
+---
+
+## Industrial IoT and Predictive Maintenance Pipeline
+
+For predictive maintenance applications, a practical learning and deployment progression is:
+
+```text
+TensorFlow + Keras
+        ↓
+Autoencoders
+        ↓
+LSTM Networks
+        ↓
+CNN for Vibration Signals
+        ↓
+TensorFlow Lite
+        ↓
+Raspberry Pi / Edge Gateway
+        ↓
+ESP32 + MQTT Data Acquisition
+```
+
+### Typical Architecture
+
+```text
+Sensors
+   ↓
+ESP32
+   ↓
+MQTT
+   ↓
+Raspberry Pi
+   ↓
+TensorFlow Lite Model
+   ↓
+Fault Prediction
+```
+
+---
+
+# ONNX Runtime
+
+ONNX Runtime is an open-source, cross-platform engine developed by Microsoft for executing machine learning models efficiently.
+
+It supports models from:
+
+* PyTorch
+* TensorFlow
+* Scikit-learn
+* XGBoost
+* Other ONNX-compatible frameworks
+
+### Key Benefits
+
+A single model can run on:
+
+* Windows
+* Linux
+* Raspberry Pi
+* NVIDIA Jetson
+* Cloud platforms
+
+### Deployment Workflow
+
+```text
+PyTorch
+    ↓
+Export to ONNX
+    ↓
+ONNX Runtime
+    ↓
+Deployment
+```
+
+### Advantages
+
+| Feature               | Benefit                         |
+| --------------------- | ------------------------------- |
+| Cross-platform        | Run anywhere                    |
+| Hardware acceleration | CPU, GPU, NPU support           |
+| Fast inference        | Production-ready                |
+| Framework agnostic    | One runtime for many frameworks |
+
+---
+
+# NVIDIA Jetson Ecosystem
+
+For high-performance edge AI, NVIDIA Jetson devices are among the most powerful solutions available.
+
+### Recommended Platform
+
+* NVIDIA Jetson Orin Nano
+
+### Supported Models
+
+* CNNs
+* LSTMs
+* Vision Transformers (ViTs)
+* YOLO Object Detection
+* Large Language Models (LLMs)
+
+### Typical Workflow
+
+```text
+PyTorch
+    ↓
+TensorRT Optimization
+    ↓
+Jetson Deployment
+    ↓
+Real-Time Inference
+```
+
+### Applications
+
+* Robotics
+* Autonomous systems
+* Smart cameras
+* Industrial inspection
+* Edge computer vision
+
+---
+
+# Edge Impulse
+
+Edge Impulse is a beginner-friendly platform for building and deploying TinyML applications.
+
+### Supported Hardware
+
+* ESP32
+* Arduino
+* STM32
+* Nordic nRF series
+
+### Workflow
+
+```text
+Collect Sensor Data
+          ↓
+Train Model in Edge Impulse
+          ↓
+Generate Firmware
+          ↓
+Deploy to Device
+```
+
+### Advantages
+
+| Feature               | Benefit                        |
+| --------------------- | ------------------------------ |
+| No-code interface     | Easy to learn                  |
+| TinyML support        | Optimized for microcontrollers |
+| Data collection tools | Integrated workflow            |
+| Deployment tools      | One-click export               |
+
+---
+
+# Choosing the Right Platform
+
+| Platform              | Best For                           |
+| --------------------- | ---------------------------------- |
+| TensorFlow Lite       | Mobile and Raspberry Pi deployment |
+| TensorFlow Lite Micro | TinyML and microcontrollers        |
+| ONNX Runtime          | Cross-platform deployment          |
+| NVIDIA Jetson         | High-performance edge AI           |
+| Edge Impulse          | Rapid prototyping and education    |
+
+---
+
+# Conclusion
+
+Modern Edge AI systems typically follow one of the following deployment paths:
+
+```text
+TensorFlow
+    ↓
+TensorFlow Lite
+    ↓
+Raspberry Pi / Mobile Device
+```
+
+or
+
+```text
+PyTorch
+    ↓
+ONNX
+    ↓
+ONNX Runtime
+    ↓
+Cross-Platform Deployment
+```
+
+or
+
+```text
+PyTorch
+    ↓
+TensorRT
+    ↓
+NVIDIA Jetson
+    ↓
+High-Performance Edge AI
+```
+
+The choice depends on the available hardware, computational requirements, power constraints, and deployment environment.
+
+Note: *The branding has shifted from "TensorFlow Lite" toward LiteRT, but many developers still use the term "TensorFlow Lite (TFLite)" because of its widespread adoption and existing tooling.*
