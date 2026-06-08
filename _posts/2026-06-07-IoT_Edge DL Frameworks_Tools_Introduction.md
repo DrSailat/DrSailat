@@ -182,12 +182,32 @@ Tensor → Computation Graph → Gradients → Optimization
 
 A tensor is a multi-dimensional array used to store data in PyTorch.
 
-| Type      | Example             |
-| --------- | ------------------- |
-| Scalar    | `5`                 |
-| Vector    | `[1, 2, 3]`         |
-| Matrix    | `[[1, 2], [3, 4]]`  |
-| 3D Tensor | Image `(H × W × C)` |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scalar</td>
+      <td><code>5</code></td>
+    </tr>
+    <tr>
+      <td>Vector</td>
+      <td><code>[1, 2, 3]</code></td>
+    </tr>
+    <tr>
+      <td>Matrix</td>
+      <td><code>[[1, 2], [3, 4]]</code></td>
+    </tr>
+    <tr>
+      <td>3D Tensor</td>
+      <td>Image <code>(H × W × C)</code></td>
+    </tr>
+  </tbody>
+</table>
 
 
 ### Creating Tensors
@@ -333,14 +353,41 @@ Gradient-descent update rule:
 
 ### Common Optimizers
 
-| Optimizer    | Description                                    |
-| ------------ | ---------------------------------------------- |
-| SGD          | Basic stochastic gradient descent              |
-| Momentum SGD | Uses previous gradients to accelerate learning |
-| Adagrad      | Adaptive learning rate for each parameter      |
-| RMSprop      | Maintains moving average of squared gradients  |
-| Adam         | Combines Momentum and RMSprop                  |
-| AdamW        | Adam with decoupled weight decay               |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Optimizer</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SGD</td>
+      <td>Basic stochastic gradient descent</td>
+    </tr>
+    <tr>
+      <td>Momentum SGD</td>
+      <td>Uses previous gradients to accelerate learning</td>
+    </tr>
+    <tr>
+      <td>Adagrad</td>
+      <td>Adaptive learning rate for each parameter</td>
+    </tr>
+    <tr>
+      <td>RMSprop</td>
+      <td>Maintains moving average of squared gradients</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Combines Momentum and RMSprop</td>
+    </tr>
+    <tr>
+      <td>AdamW</td>
+      <td>Adam with decoupled weight decay</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## Pytorch Training Loop (Most Important)
@@ -372,7 +419,6 @@ for epoch in range(100):
 Data → Model → Loss → Backpropagation → Update Weights → Repeat
 ```
 
----
 
 ## PyTorch Backpropagation
 
@@ -386,7 +432,6 @@ using the chain rule:
 
 This allows gradients to flow backward through the network and update parameters efficiently.
 
----
 
 ## PyTorch GPU Acceleration
 
@@ -459,7 +504,7 @@ Tensor → Computation Graph → Gradients → Optimization
 
 ---
 
-## 2.  What is TensorFlow?
+## 2.1  What is TensorFlow?
 
 Official Link:
 <a href="https://www.tensorflow.org" target="_blank" rel="noopener">
@@ -487,9 +532,9 @@ TensorFlow performs:
     - Backpropagation: Compute gradients: LW
     - Update Weights: W=W−ηLW
 
----
 
-# 3. What is Keras?
+
+## 2.3 What is Keras?
 
 Official Link:
 <a href="https://keras.io" target="_blank" rel="noopener">
@@ -576,10 +621,25 @@ Standard TensorFlow models can be large and computationally expensive.
 
 For example:
 
-| Model Type             | Size             |
-| ---------------------- | ---------------- |
-| TensorFlow Model       | 100 MB           |
-| Optimized TFLite Model | 10 MB or smaller |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Model Type</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TensorFlow Model</td>
+      <td>100 MB</td>
+    </tr>
+    <tr>
+      <td>Optimized TFLite Model</td>
+      <td>10 MB or smaller</td>
+    </tr>
+  </tbody>
+</table>
+
 
 Benefits include:
 
@@ -622,11 +682,11 @@ Prediction
 
 Typical applications include:
 
-* Predictive maintenance
-* Anomaly detection
-* Smart agriculture
-* Industrial monitoring
-* Computer vision
+    * Predictive maintenance
+    * Anomaly detection
+    * Smart agriculture
+    * Industrial monitoring
+    * Computer vision
 
 
 ## TensorFlow Lite Micro (TinyML)
@@ -661,7 +721,7 @@ Deploy on Microcontroller
 This approach allows AI models to run with only a few kilobytes of memory.
 ---
 
-## Industrial IoT and Predictive Maintenance Pipeline
+## Example:  Industrial IoT and Predictive Maintenance Pipeline 
 
 For predictive maintenance applications, a practical learning and deployment progression is:
 
@@ -705,21 +765,21 @@ ONNX Runtime is an open-source, cross-platform engine developed by Microsoft for
 
 It supports models from:
 
-* PyTorch
-* TensorFlow
-* Scikit-learn
-* XGBoost
-* Other ONNX-compatible frameworks
+    * PyTorch
+    * TensorFlow
+    * Scikit-learn
+    * XGBoost
+    * Other ONNX-compatible frameworks
 
 ### Key Benefits
 
 A single model can run on:
 
-* Windows
-* Linux
-* Raspberry Pi
-* NVIDIA Jetson
-* Cloud platforms
+    * Windows
+    * Linux
+    * Raspberry Pi
+    * NVIDIA Jetson
+    * Cloud platforms
 
 ### Deployment Workflow
 
@@ -735,12 +795,33 @@ Deployment
 
 ### Advantages
 
-| Feature               | Benefit                         |
-| --------------------- | ------------------------------- |
-| Cross-platform        | Run anywhere                    |
-| Hardware acceleration | CPU, GPU, NPU support           |
-| Fast inference        | Production-ready                |
-| Framework agnostic    | One runtime for many frameworks |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cross-platform</td>
+      <td>Run anywhere</td>
+    </tr>
+    <tr>
+      <td>Hardware acceleration</td>
+      <td>CPU, GPU, NPU support</td>
+    </tr>
+    <tr>
+      <td>Fast inference</td>
+      <td>Production-ready</td>
+    </tr>
+    <tr>
+      <td>Framework agnostic</td>
+      <td>One runtime for many frameworks</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ---
 
@@ -774,11 +855,11 @@ Real-Time Inference
 
 ### Applications
 
-* Robotics
-* Autonomous systems
-* Smart cameras
-* Industrial inspection
-* Edge computer vision
+    * Robotics
+    * Autonomous systems
+    * Smart cameras
+    * Industrial inspection
+    * Edge computer vision
 
 ---
 
@@ -813,26 +894,72 @@ Deploy to Device
 
 ### Advantages
 
-| Feature               | Benefit                        |
-| --------------------- | ------------------------------ |
-| No-code interface     | Easy to learn                  |
-| TinyML support        | Optimized for microcontrollers |
-| Data collection tools | Integrated workflow            |
-| Deployment tools      | One-click export               |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No-code interface</td>
+      <td>Easy to learn</td>
+    </tr>
+    <tr>
+      <td>TinyML support</td>
+      <td>Optimized for microcontrollers</td>
+    </tr>
+    <tr>
+      <td>Data collection tools</td>
+      <td>Integrated workflow</td>
+    </tr>
+    <tr>
+      <td>Deployment tools</td>
+      <td>One-click export</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 ---
 
 # Choosing the Right Platform
 
-| Platform              | Best For                           |
-| --------------------- | ---------------------------------- |
-| TensorFlow Lite       | Mobile and Raspberry Pi deployment |
-| TensorFlow Lite Micro | TinyML and microcontrollers        |
-| ONNX Runtime          | Cross-platform deployment          |
-| NVIDIA Jetson         | High-performance edge AI           |
-| Edge Impulse          | Rapid prototyping and education    |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TensorFlow Lite</td>
+      <td>Mobile and Raspberry Pi deployment</td>
+    </tr>
+    <tr>
+      <td>TensorFlow Lite Micro</td>
+      <td>TinyML and microcontrollers</td>
+    </tr>
+    <tr>
+      <td>ONNX Runtime</td>
+      <td>Cross-platform deployment</td>
+    </tr>
+    <tr>
+      <td>NVIDIA Jetson</td>
+      <td>High-performance edge AI</td>
+    </tr>
+    <tr>
+      <td>Edge Impulse</td>
+      <td>Rapid prototyping and education</td>
+    </tr>
+  </tbody>
+</table>
 
----
+
+
 
 # Conclusion
 
