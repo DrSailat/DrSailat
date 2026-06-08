@@ -1,6 +1,6 @@
 ---
 layout: Article
-title: "Notes on IoT/Edge Deep Learning Architectures/Models- Introduction"
+title: "2026-05-30: Notes on IoT/Edge Deep Learning Architectures/Models- Introduction"
 date: 2026-05-30
 ---
 <script>
