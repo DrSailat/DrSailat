@@ -323,11 +323,11 @@ y_pred = model(x)
 ```
 
 
-## Pytorch Loss Functions
+### Pytorch Loss Functions
 
 Loss functions measure prediction error.
 
-### Mean Squared Error (MSE)
+#### Mean Squared Error (MSE)
 
 `L = (1/n) Σ (ŷ - y)²`
 
@@ -336,7 +336,7 @@ criterion = nn.MSELoss()
 ```
 
 
-## Optimizers
+### Pytorch Optimization
 
 Optimizers update model weights based on gradients.
 
@@ -353,7 +353,7 @@ Gradient-descent update rule:
 
 `W ← W − η∇L`
 
-### Common Optimizers
+### Common Pytorch Optimizers
 
 <table border="1" cellspacing="0" cellpadding="8">
   <thead>
@@ -392,7 +392,7 @@ Gradient-descent update rule:
 
 
 
-## Pytorch Training Loop (Most Important)
+### Pytorch Training Loop (Most Important)
 
 ```python
 for epoch in range(100):
@@ -435,7 +435,7 @@ using the chain rule:
 This allows gradients to flow backward through the network and update parameters efficiently.
 
 
-## PyTorch GPU Acceleration
+### PyTorch GPU Acceleration
 
 Move models and tensors to the GPU:
 
@@ -450,7 +450,7 @@ Y = Y.to(device)
 This significantly speeds up training for large models.
 
 
-## PyTorch Dataset Handling
+### PyTorch Dataset Handling
 
 PyTorch provides:
 
@@ -525,7 +525,7 @@ It helps you:
       
 TensorFlow Workflow
 
-        Data → Model → Training → Loss Calculation → Backpropagation → Weight Update → Trained Model
+  Data → Model → Training → Loss Calculation → Backpropagation → Weight Update → Trained Model
 
 TensorFlow performs:
 
@@ -617,11 +617,11 @@ TensorFlow Lite (TFLite), now part of Google's LiteRT ecosystem, is a framework 
 
 TensorFlow Lite is designed for deployment on:
                 
-                      * Mobile devices (Android and iOS)
-                      * Raspberry Pi
-                      * Edge AI systems
-                      * Embedded systems
-                      * Microcontrollers (via TensorFlow Lite Micro)
+                      - Mobile devices (Android and iOS)
+                      - Raspberry Pi
+                      - Edge AI systems
+                      - Embedded systems
+                      - Microcontrollers (via TensorFlow Lite Micro)
 
 ### Why TensorFlow Lite?
 
@@ -690,11 +690,11 @@ Prediction
 
 Typical applications include:
 
-    * Predictive maintenance
-    * Anomaly detection
-    * Smart agriculture
-    * Industrial monitoring
-    * Computer vision
+    - Predictive maintenance
+    - Anomaly detection
+    - Smart agriculture
+    - Industrial monitoring
+    - Computer vision
 
 
 ## TensorFlow Lite Micro (TinyML)
@@ -709,10 +709,10 @@ TensorFlow Lite Micro enables machine learning inference directly on microcontro
 
 ### Supported Hardware
 
-* ESP32
-* STM32
-* Arduino
-* ARM Cortex-M devices
+      - ESP32
+      - STM32
+      - Arduino
+      - ARM Cortex-M devices
 
 ### Workflow
 
@@ -733,37 +733,37 @@ This approach allows AI models to run with only a few kilobytes of memory.
 
 For predictive maintenance applications, a practical learning and deployment progression is:
 
-```text
-TensorFlow + Keras
-        ↓
-Autoencoders
-        ↓
-LSTM Networks
-        ↓
-CNN for Vibration Signals
-        ↓
-TensorFlow Lite
-        ↓
-Raspberry Pi / Edge Gateway
-        ↓
-ESP32 + MQTT Data Acquisition
-```
+                ```text
+                TensorFlow + Keras
+                        ↓
+                Autoencoders
+                        ↓
+                LSTM Networks
+                        ↓
+                CNN for Vibration Signals
+                        ↓
+                TensorFlow Lite
+                        ↓
+                Raspberry Pi / Edge Gateway
+                        ↓
+                ESP32 + MQTT Data Acquisition
+                ```
 
 ### Typical Architecture
 
-```text
-Sensors
-   ↓
-ESP32
-   ↓
-MQTT
-   ↓
-Raspberry Pi
-   ↓
-TensorFlow Lite Model
-   ↓
-Fault Prediction
-```
+                        ```text
+                        Sensors
+                           ↓
+                        ESP32
+                           ↓
+                        MQTT
+                           ↓
+                        Raspberry Pi
+                           ↓
+                        TensorFlow Lite Model
+                           ↓
+                        Fault Prediction
+                        ```
 
 ---
 
@@ -783,23 +783,23 @@ It supports models from:
 
 A single model can run on:
 
-    * Windows
-    * Linux
-    * Raspberry Pi
-    * NVIDIA Jetson
-    * Cloud platforms
+                        - Windows
+                        - Linux
+                        - Raspberry Pi
+                        - NVIDIA Jetson
+                        - Cloud platforms
 
 ### Deployment Workflow
 
-```text
-PyTorch
-    ↓
-Export to ONNX
-    ↓
-ONNX Runtime
-    ↓
-Deployment
-```
+                        ```text
+                        PyTorch
+                            ↓
+                        Export to ONNX
+                            ↓
+                        ONNX Runtime
+                            ↓
+                        Deployment
+                        ```
 
 ### Advantages
 
@@ -851,15 +851,15 @@ For high-performance edge AI, NVIDIA Jetson devices are among the most powerful 
 
 ### Typical Workflow
 
-```text
-PyTorch
-    ↓
-TensorRT Optimization
-    ↓
-Jetson Deployment
-    ↓
-Real-Time Inference
-```
+                ```text
+                PyTorch
+                    ↓
+                TensorRT Optimization
+                    ↓
+                Jetson Deployment
+                    ↓
+                Real-Time Inference
+                ```
 
 ### Applications
 
@@ -889,16 +889,16 @@ Edge Impulse is a beginner-friendly platform for building and deploying TinyML a
 * Nordic nRF series
 
 ### Workflow
-
-```text
-Collect Sensor Data
-          ↓
-Train Model in Edge Impulse
-          ↓
-Generate Firmware
-          ↓
-Deploy to Device
-```
+            
+            ```text
+            Collect Sensor Data
+                      ↓
+            Train Model in Edge Impulse
+                      ↓
+            Generate Firmware
+                      ↓
+            Deploy to Device
+            ```
 
 ### Advantages
 
@@ -972,38 +972,38 @@ Deploy to Device
 # Conclusion
 
 Modern Edge AI systems typically follow one of the following deployment paths:
+          
+          ```text
+          TensorFlow
+              ↓
+          TensorFlow Lite
+              ↓
+          Raspberry Pi / Mobile Device
+          ```
 
-```text
-TensorFlow
-    ↓
-TensorFlow Lite
-    ↓
-Raspberry Pi / Mobile Device
-```
+**OR**
 
-or
+          ```text
+          PyTorch
+              ↓
+          ONNX
+              ↓
+          ONNX Runtime
+              ↓
+          Cross-Platform Deployment
+          ```
 
-```text
-PyTorch
-    ↓
-ONNX
-    ↓
-ONNX Runtime
-    ↓
-Cross-Platform Deployment
-```
+**OR**
 
-or
-
-```text
-PyTorch
-    ↓
-TensorRT
-    ↓
-NVIDIA Jetson
-    ↓
-High-Performance Edge AI
-```
+          ```text
+          PyTorch
+              ↓
+          TensorRT
+              ↓
+          NVIDIA Jetson
+              ↓
+          High-Performance Edge AI
+          ```
 
 The choice depends on the available hardware, computational requirements, power constraints, and deployment environment.
 
