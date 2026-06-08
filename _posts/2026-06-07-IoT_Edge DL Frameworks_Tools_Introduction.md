@@ -110,7 +110,7 @@ Below is a short summary of the most commonly used optimizers.
 
 ## Common PyTorch Optimizers
 
-```html
+
 <table border="1" cellspacing="0" cellpadding="8">
   <thead>
     <tr>
@@ -157,7 +157,7 @@ Below is a short summary of the most commonly used optimizers.
     </tr>
   </tbody>
 </table>
-```
+
 
 
 
