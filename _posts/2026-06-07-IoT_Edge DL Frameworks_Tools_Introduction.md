@@ -732,38 +732,38 @@ This approach allows AI models to run with only a few kilobytes of memory.
 ## Example:  Industrial IoT and Predictive Maintenance Pipeline 
 
 For predictive maintenance applications, a practical learning and deployment progression is:
-
-                ```text
-                TensorFlow + Keras
-                        ↓
-                Autoencoders
-                        ↓
-                LSTM Networks
-                        ↓
-                CNN for Vibration Signals
-                        ↓
-                TensorFlow Lite
-                        ↓
-                Raspberry Pi / Edge Gateway
-                        ↓
-                ESP32 + MQTT Data Acquisition
-                ```
+  
+  ```text
+  TensorFlow + Keras
+      ↓
+  Autoencoders
+      ↓
+  LSTM Networks
+      ↓
+  CNN for Vibration Signals
+      ↓
+  TensorFlow Lite
+      ↓
+  Raspberry Pi / Edge Gateway
+      ↓
+  ESP32 + MQTT Data Acquisition
+  ```
 
 ### Typical Architecture
 
-                        ```text
-                        Sensors
-                           ↓
-                        ESP32
-                           ↓
-                        MQTT
-                           ↓
-                        Raspberry Pi
-                           ↓
-                        TensorFlow Lite Model
-                           ↓
-                        Fault Prediction
-                        ```
+```text
+Sensors
+   ↓
+ESP32
+   ↓
+MQTT
+   ↓
+Raspberry Pi
+   ↓
+TensorFlow Lite Model
+   ↓
+Fault Prediction
+```
 
 ---
 
@@ -791,15 +791,15 @@ A single model can run on:
 
 ### Deployment Workflow
 
-                        ```text
-                        PyTorch
-                            ↓
-                        Export to ONNX
-                            ↓
-                        ONNX Runtime
-                            ↓
-                        Deployment
-                        ```
+```text
+PyTorch
+    ↓
+Export to ONNX
+    ↓
+ONNX Runtime
+    ↓
+Deployment
+```
 
 ### Advantages
 
@@ -851,15 +851,15 @@ For high-performance edge AI, NVIDIA Jetson devices are among the most powerful 
 
 ### Typical Workflow
 
-                ```text
-                PyTorch
-                    ↓
-                TensorRT Optimization
-                    ↓
-                Jetson Deployment
-                    ↓
-                Real-Time Inference
-                ```
+  ```text
+  PyTorch
+      ↓
+  TensorRT Optimization
+      ↓
+  Jetson Deployment
+      ↓
+  Real-Time Inference
+  ```
 
 ### Applications
 
@@ -890,15 +890,15 @@ Edge Impulse is a beginner-friendly platform for building and deploying TinyML a
 
 ### Workflow
             
-            ```text
-            Collect Sensor Data
-                      ↓
-            Train Model in Edge Impulse
-                      ↓
-            Generate Firmware
-                      ↓
-            Deploy to Device
-            ```
+```text
+Collect Sensor Data
+          ↓
+Train Model in Edge Impulse
+          ↓
+Generate Firmware
+          ↓
+Deploy to Device
+```
 
 ### Advantages
 
@@ -972,38 +972,38 @@ Edge Impulse is a beginner-friendly platform for building and deploying TinyML a
 # Conclusion
 
 Modern Edge AI systems typically follow one of the following deployment paths:
-          
-          ```text
-          TensorFlow
-              ↓
-          TensorFlow Lite
-              ↓
-          Raspberry Pi / Mobile Device
-          ```
+  
+  ```text
+  TensorFlow
+      ↓
+  TensorFlow Lite
+      ↓
+  Raspberry Pi / Mobile Device
+  ```
 
 **OR**
 
-          ```text
-          PyTorch
-              ↓
-          ONNX
-              ↓
-          ONNX Runtime
-              ↓
-          Cross-Platform Deployment
-          ```
+  ```text
+  PyTorch
+      ↓
+  ONNX
+      ↓
+  ONNX Runtime
+      ↓
+  Cross-Platform Deployment
+  ```
 
 **OR**
 
-          ```text
-          PyTorch
-              ↓
-          TensorRT
-              ↓
-          NVIDIA Jetson
-              ↓
-          High-Performance Edge AI
-          ```
+  ```text
+  PyTorch
+      ↓
+  TensorRT
+      ↓
+  NVIDIA Jetson
+      ↓
+  High-Performance Edge AI
+  ```
 
 The choice depends on the available hardware, computational requirements, power constraints, and deployment environment.
 
