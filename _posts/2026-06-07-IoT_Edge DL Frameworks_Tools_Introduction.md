@@ -29,7 +29,7 @@ Published: 2026-06-07
 
 Deep Learning pipeline as generally can be summarized as: 
 
-    **Dataset** → **Tensor** → **Neural Network** → **Prediction** → **Loss Function** → **Backpropagation** → **Optimizer** → **Update Weight**
+**Dataset** → **Tensor** → **Neural Network** → **Prediction** → **Loss Function** → **Backpropagation** → **Optimizer** → **Update Weight**
 
  is implemented by DL frameworks 
 
@@ -41,15 +41,15 @@ Frameworks are a set of tools to implement models or architectures primarily in 
 
 ## Connection hierarchy  
 
-                              **PyTorch**
+                              PyTorch**
                              
                               └── Complete framework
                           
-                              **TensorFlow**
+                              TensorFlow**
                           
                               └── Complete framework
                           
-                                └── **Keras** (high-level interface)
+                                └── Keras (high-level interface)
 
 TensorFlow and PyTorch can often be used as alternatives to each other, because both are full-featured deep learning frameworks capable of training and deploying neural networks but slightly different in programming style.PyTorch is generally considered more Pythonic and intuitive.TensorFlow offers a larger deployment ecosystem:
 
