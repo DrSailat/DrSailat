@@ -110,15 +110,54 @@ Below is a short summary of the most commonly used optimizers.
 
 ## Common PyTorch Optimizers
 
-| Optimizer    | Description                                                                    | Advantages                                             |
-| ------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
-| SGD          | Stochastic Gradient Descent updates parameters using the gradient of the loss. | Simple and memory-efficient.                           |
-| Momentum SGD | Extends SGD by accumulating previous gradients.                                | Faster convergence and reduced oscillations.           |
-| Adagrad      | Adapts the learning rate for each parameter individually.                      | Useful for sparse data.                                |
-| RMSprop      | Uses a moving average of squared gradients.                                    | Handles non-stationary objectives well.                |
-| Adam         | Combines Momentum and RMSprop.                                                 | Most widely used; generally works well out of the box. |
-| AdamW        | Adam with decoupled weight decay.                                              | Better regularization and generalization.              |
-| LBFGS        | Second-order optimization method.                                              | Effective for some small-scale optimization problems.  |
+```html
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Optimizer</th>
+      <th>Description</th>
+      <th>Advantages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SGD</td>
+      <td>Stochastic Gradient Descent updates parameters using the gradient of the loss.</td>
+      <td>Simple and memory-efficient.</td>
+    </tr>
+    <tr>
+      <td>Momentum SGD</td>
+      <td>Extends SGD by accumulating previous gradients.</td>
+      <td>Faster convergence and reduced oscillations.</td>
+    </tr>
+    <tr>
+      <td>Adagrad</td>
+      <td>Adapts the learning rate for each parameter individually.</td>
+      <td>Useful for sparse data.</td>
+    </tr>
+    <tr>
+      <td>RMSprop</td>
+      <td>Uses a moving average of squared gradients.</td>
+      <td>Handles non-stationary objectives well.</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Combines Momentum and RMSprop.</td>
+      <td>Most widely used; generally works well out of the box.</td>
+    </tr>
+    <tr>
+      <td>AdamW</td>
+      <td>Adam with decoupled weight decay.</td>
+      <td>Better regularization and generalization.</td>
+    </tr>
+    <tr>
+      <td>LBFGS</td>
+      <td>Second-order optimization method.</td>
+      <td>Effective for some small-scale optimization problems.</td>
+    </tr>
+  </tbody>
+</table>
+```
 
 
 
