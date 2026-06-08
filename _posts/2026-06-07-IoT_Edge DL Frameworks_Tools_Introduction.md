@@ -67,37 +67,40 @@ A practical rule is:
 ## TensorFlow vs Keras vs TensorFlow Lite
 TensorFlow ---> Keras builds models ----> TensorFlow trains models ---> TensorFlow Lite deploys models
 
+---
+
 # 1. PyTorch- Introduction
 
 PyTorch is a deep learning framework based on tensors + automatic differentiation + GPU acceleration.
-Official: PyTorch, 
+Official: PyTorch = 
 <a href="https://docs.pytorch.org/docs/2.12/index.html" target="_blank" rel="noopener">
 https://docs.pytorch.org/docs/2.12/index.html
 </a>
 
  
 ## PyTorch Fundamentals: From Tensors to Optimization
+
 Pytorch is a mathematical library for deep learning . In pytorch everything is built around: 
 
 **Tensor → Computation Graph → Gradients → Optimization**
 
 A neural network can be represented mathematically as:
 
-y=f(x,W)
+        y=f(x,W)
 
 where:
 
-* (x) is the input data,
-* (W) represents the model parameters (weights),
-* (y) is the predicted output.
+      * (x) is the input data,
+      * (W) represents the model parameters (weights),
+      * (y) is the predicted output.
 
 To measure prediction error, a loss function is defined. A common example is the Mean Squared Error (MSE):
 
-L=(\hat{y}-y)^2
+        L=(\hat{y}-y)^2
 
 PyTorch uses **automatic differentiation (Autograd)** to compute gradients of the loss with respect to model parameters:
 
-\frac{\partial L}{\partial W}
+      \frac{\partial L}{\partial W}
 
 These gradients indicate how the parameters should be adjusted to minimize the loss.
 
@@ -147,6 +150,7 @@ A tensor is a multi-dimensional array used to store data in PyTorch.
 | Matrix    | `[[1, 2], [3, 4]]`  |
 | 3D Tensor | Image `(H × W × C)` |
 
+
 ### Creating Tensors
 
 ```python
@@ -156,6 +160,7 @@ x = torch.tensor([1.0, 2.0, 3.0])
 print(x)
 ```
 
+
 ### Tensor with Gradient Tracking
 
 ```python
@@ -164,9 +169,8 @@ x = torch.tensor([2.0], requires_grad=True)
 
 This enables **automatic differentiation (Autograd)**.
 
----
 
-## Basic Operations
+## Basic Tensor Operations
 
 ### Tensor Addition
 
@@ -182,7 +186,7 @@ c = a + b
 print(c)
 ```
 
-### Matrix Multiplication
+### Tensor Multiplication
 
 Mathematically:
 
@@ -195,7 +199,6 @@ B = torch.randn(3, 4)
 C = torch.matmul(A, B)
 ```
 
----
 
 ## Autograd (Most Important Concept)
 
@@ -213,7 +216,7 @@ y.backward()
 print(x.grad)
 ```
 
-For:
+For Example :PyTorch computes following automatically.
 
 `y = x² + 3x + 1`
 
@@ -227,7 +230,6 @@ At `x = 2`:
 
 PyTorch computes this automatically.
 
----
 
 ## Neural Network Module (`torch.nn`)
 
@@ -259,7 +261,6 @@ x = torch.randn(1, 3)
 y_pred = model(x)
 ```
 
----
 
 ## Loss Functions
 
@@ -303,9 +304,8 @@ Gradient-descent update rule:
 | Adam         | Combines Momentum and RMSprop                  |
 | AdamW        | Adam with decoupled weight decay               |
 
----
 
-## Training Loop (Most Important)
+## Pytorch Training Loop (Most Important)
 
 ```python
 for epoch in range(100):
@@ -336,7 +336,7 @@ Data → Model → Loss → Backpropagation → Update Weights → Repeat
 
 ---
 
-## Backpropagation
+## PyTorch Backpropagation
 
 PyTorch computes:
 
@@ -350,7 +350,7 @@ This allows gradients to flow backward through the network and update parameters
 
 ---
 
-## GPU Acceleration
+## PyTorch GPU Acceleration
 
 Move models and tensors to the GPU:
 
@@ -364,9 +364,8 @@ Y = Y.to(device)
 
 This significantly speeds up training for large models.
 
----
 
-## Dataset Handling
+## PyTorch Dataset Handling
 
 PyTorch provides:
 
@@ -389,7 +388,7 @@ loader = DataLoader(
 
 The `DataLoader` automatically creates mini-batches and efficiently feeds data to the model during training.
 
----
+
 
 ## Summary
 
@@ -409,6 +408,7 @@ Tensor → Computation Graph → Gradients → Optimization
 
 ```
 ```
+--- 
 
 # 2. TensorFlow/Keras/TensorLite
 
@@ -419,8 +419,7 @@ Tensor → Computation Graph → Gradients → Optimization
       │
       └── TensorFlow Lite (deployment on edge devices)
 
-
-
+---
 
 ## 2.  What is TensorFlow?
 
@@ -429,41 +428,38 @@ Official site:TensorFlow
 
 It helps you:
 
-- Build neural networks
-- Train models
-- Evaluate models
-- Deploy models
-  
+    - Build neural networks
+    - Train models
+    - Evaluate models
+    - Deploy models
+      
 TensorFlow Workflow
 
         Data → Model → Training → Loss Calculation → Backpropagation → Weight Update → Trained Model
 
 TensorFlow performs:
 
-- Forward Pass: y= f(x)
-- Compute Loss: Example MSE: L= 1n(y-y)2
-- Backpropagation: Compute gradients: LW
-- Update Weights: W=W−ηLW
+    - Forward Pass: y= f(x)
+    - Compute Loss: Example MSE: L= 1n(y-y)2
+    - Backpropagation: Compute gradients: LW
+    - Update Weights: W=W−ηLW
 
 ---
 
 # 3. What is Keras?
 
-Official: Keras
 Keras is a high-level API that runs on top of TensorFlow.
-
+Official Link: 
 Think:
 
-- TensorFlow = Engine
-- Keras = Steering Wheel
-- TensorFlow does the heavy lifting.
-  
-Keras makes it easy to use.
+      - TensorFlow = Engine
+      - Keras = Steering Wheel
+      - TensorFlow does the heavy lifting.Keras makes it easy to use.
 
 ## With/Without Keras
 
-You would manually build layers, losses, gradients, and optimizers and ended up in Lots of code
-You can create a neural network in a few lines using kers:
+You would manually build layers, losses, gradients, and optimizers and ended up in Lots of code. 
+You can create a neural network in a few lines using keras:
 
 ```python
 from tensorflow import keras
@@ -503,7 +499,7 @@ Predict:
 model.predict([5])
 
 ```
-
+---
 
 # Edge AI Deployment: TensorFlow Lite, ONNX Runtime, Jetson, and Edge Impulse
 
@@ -515,11 +511,11 @@ TensorFlow Lite (TFLite), now part of Google's LiteRT ecosystem, is a framework 
 
 TensorFlow Lite is designed for deployment on:
 
-* Mobile devices (Android and iOS)
-* Raspberry Pi
-* Edge AI systems
-* Embedded systems
-* Microcontrollers (via TensorFlow Lite Micro)
+      * Mobile devices (Android and iOS)
+      * Raspberry Pi
+      * Edge AI systems
+      * Embedded systems
+      * Microcontrollers (via TensorFlow Lite Micro)
 
 ### Why TensorFlow Lite?
 
@@ -534,12 +530,11 @@ For example:
 
 Benefits include:
 
-* Reduced model size
-* Faster inference
-* Lower memory consumption
-* Lower power consumption
+    * Reduced model size
+    * Faster inference
+    * Lower memory consumption
+    * Lower power consumption
 
----
 
 ## Converting a TensorFlow Model to TFLite
 
@@ -557,7 +552,6 @@ with open("model.tflite", "wb") as f:
     f.write(tflite_model)
 ```
 
----
 
 ## TensorFlow Lite on Raspberry Pi
 
@@ -581,9 +575,14 @@ Typical applications include:
 * Industrial monitoring
 * Computer vision
 
----
 
 ## TensorFlow Lite Micro (TinyML)
+
+Google link: 
+<a href="https://developers.google.com/edge/litert/microcontrollers/overview" target="_blank" rel="noopener">
+https://developers.google.com/edge/litert/microcontrollers/overview
+</a>
+
 
 TensorFlow Lite Micro enables machine learning inference directly on microcontrollers.
 
@@ -607,7 +606,6 @@ Deploy on Microcontroller
 ```
 
 This approach allows AI models to run with only a few kilobytes of memory.
-
 ---
 
 ## Industrial IoT and Predictive Maintenance Pipeline
@@ -733,7 +731,13 @@ Real-Time Inference
 
 # Edge Impulse
 
+Official link: 
+<a href="https://www.edgeimpulse.com" target="_blank" rel="noopener">
+https://www.edgeimpulse.com
+</a>
+
 Edge Impulse is a beginner-friendly platform for building and deploying TinyML applications.
+
 
 ### Supported Hardware
 
