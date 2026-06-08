@@ -41,11 +41,11 @@ Frameworks are a set of tools to implement models or architectures primarily in 
 
 ## Connection hierarchy  
 
-                              PyTorch**
+                              PyTorch
                              
                               └── Complete framework
                           
-                              TensorFlow**
+                              TensorFlow
                           
                               └── Complete framework
                           
@@ -71,7 +71,7 @@ A practical rule is:
 
 ---
 
-# 1. PyTorch- Introduction
+# 1. PyTorch - Introduction
 
 PyTorch is a deep learning framework based on tensors + automatic differentiation + GPU acceleration.
 Official: PyTorch = 
@@ -98,11 +98,11 @@ where:
 
 To measure prediction error, a loss function is defined. A common example is the Mean Squared Error (MSE):
 
-                                L=(\hat{y}-y)^2
+  L=(\hat{y}-y)^2
 
 PyTorch uses **automatic differentiation (Autograd)** to compute gradients of the loss with respect to model parameters:
 
-                              \frac{\partial L}{\partial W}
+   \frac{\partial L}{\partial W}
 
 These gradients indicate how the parameters should be adjusted to minimize the loss.
 
@@ -576,23 +576,27 @@ import tensorflow as tf
 
 X = [1,2,3,4]
 Y = [2,4,6,8]
-
+```
 Build Model:
-
+```python
 model = tf.keras.Sequential([
 tf.keras.layers.Dense(1)]) or tf.keras.layers.Dense(64)
+
 A dense layer  tf.keras.layers.Dense(64)  performs:y= Wx+b
 Means 64 neurons
+```
 
 Compile Model:
 
+```python
 model.compile(optimizer='adam', loss='mse')
-
+```
 Train Model:
-
+```python
 model.fit(X, Y, epochs=100)
-
+```
 Predict:
+```python
 model.predict([5])
 
 ```
