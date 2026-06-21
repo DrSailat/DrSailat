@@ -18,10 +18,12 @@ date: 2026-06-21
 
 
 
-
+---
 # Vibe Coding to Agentic Engineering :  Collected lessons and reflections
 
 19 June, 2026 , By Dr. Saira Latif
+
+---
 
 
 
@@ -138,9 +140,11 @@ Modern AI agent development has shifted toward terminal-native, composition-driv
 - Trajectory Scoring: evaluation of agent performance across full execution traces rather than terminal outcomes. “Did it succeed efficiently and correctly step-by-step?”
      A trajectory = steps the agent takes:
          - thought → tool call → observation → next step → result
+  
 ---  
 ## Agent Skills
 ---
+
 Agent Skills are modular execution units that inject task-specific behavioral policies into general-purpose agents at runtime. They function as lightweight representations of procedural memory, defining:
 - reasoning patterns
 - tool usage constraints
@@ -212,6 +216,7 @@ Skills are implemented as filesystem-native artifacts (e.g., Markdown + scripts)
 ---
 ## Open Interoperability Protocols
 ---
+
 Agent systems increasingly rely on standardized protocols to enable composable multi-system interaction:
 - MCP (Model Context Protocol): standardized tool and data connectivity layer.
 - A2A (Agent-to-Agent): inter-agent communication and delegation protocol.
@@ -224,9 +229,12 @@ Together, these protocols define a modular agent architecture where
 - Skills operate as execution logic, 
 - MCP as connectivity, and 
 - A2A/A2UI as coordination and presentation layers.
+
+  
 ---  
 ## Agent CLI Skills vs ADK
 ---
+
 Agent development workflows involve repetitive lifecycle tasks such as:
 - scaffolding project structures
 - configuring runtime environments
