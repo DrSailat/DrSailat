@@ -1,3 +1,25 @@
+---
+layout: Article
+title: "2026-06-21: Vibe Coding to Agentic Engineering :  Collected lessons and reflections
+date: 2026-06-21
+---
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<script async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
 # Vibe Coding to Agentic Engineering :  Collected lessons and reflections
 
 19 June, 2026 
@@ -130,13 +152,13 @@ A robust architecture combines both:
 - Skills → dynamic, task-specific execution policies
 
 Skills are designed to mitigate key systemic limitations in LLM-based agent architectures:
- ### Context Window Saturation and Context Rot
+ #### 1. Context Window Saturation and Context Rot
     Overloading system prompts with static instructions results in degraded attention allocation and reduced task fidelity. Skills address this by enabling on-demand context injection, minimizing persistent token overhead and reducing context interference.
-###  Lack of Procedural Memory in LLMs
+#### 2.  Lack of Procedural Memory in LLMs
     While transformer-based models exhibit emergent episodic and semantic recall, they lack explicit procedural memory representation. Skills introduce a structured abstraction for encoding step-wise operational policies, effectively approximating reusable execution graphs.
-### Multi-Agent System Overhead
+#### 3. Multi-Agent System Overhead
     Conventional multi-agent architectures introduce coordination complexity, non-deterministic communication overhead, and maintenance challenges. Skills enable single-agent role multiplexing, allowing dynamic specialization without distributed system complexity.
-### Cross-Platform Portability
+#### 4. Cross-Platform Portability
     Skills are implemented as filesystem-native artifacts (e.g., Markdown + scripts), enabling deterministic portability across heterogeneous execution environments without vendor lock-in or runtime coupling.
 
 
