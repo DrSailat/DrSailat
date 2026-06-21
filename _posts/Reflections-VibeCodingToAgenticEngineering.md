@@ -1,6 +1,6 @@
 ---
 layout: Article
-title: "2026-06-21: Vibe Coding to Agentic Engineering :  Collected lessons and reflections
+title: "2026-06-21: Vibe Coding to Agentic Engineering :  Collected lessons and reflections"
 date: 2026-06-21
 ---
 <script>
