@@ -21,7 +21,7 @@ date: 2026-06-21
 
 # Vibe Coding to Agentic Engineering :  Collected lessons and reflections
 
-19 June, 2026 
+19 June, 2026 , By Dr. Saira Latif
 
 
 Over the past week, I have been deeply engaged in learning, practicing, and experimenting with vibe coding and agentic engineering through a Google 5-day intensive program. This included live streams, hands-on codelabs, podcasts, and the study of relevant white papers.
@@ -75,9 +75,20 @@ In this model, the developer is less concerned with writing every line of code a
 - 
 This represents a shift from implementation work to system orchestration work.
 
+  <div style="text-align:center; margin-bottom:50px;">
+  <img src="{{ site.baseurl }}/assets/images/Orchestraton.jpg" width="40%">
+  
+  <div style="margin-top:10px; font-size:0.9em;">
+     Source: (The New SDLC With Vibe Coding, white paper)
+  </div>
+</div>
+
+<p>
+
+</p>
 
 
-                 Source: (The New SDLC With Vibe Coding, white paper)
+
 
 ## Vibe Coding to Agentic Engineering 
 
@@ -90,10 +101,23 @@ Agentic engineering, however, takes this further. It moves from code generation 
 - debug and iterate on failures
 - and even propose or submit pull requests
   
-This transition marks a fundamental shift from prompting for code → to orchestrating agents that build and maintain systems
+This transition marks a fundamental shift from prompting for code → to orchestrating agents that build and maintain systems.
 In essence, vibe coding is about expressing intent, while agentic engineering is about designing and supervising intelligent workflows that execute that intent end-to-end.
 
-                    Source: (The New SDLC With Vibe Coding, white paper)
+
+  <div style="text-align:center; margin-bottom:50px;">
+  <img src="{{ site.baseurl }}/assets/images/VibeCodingToAE.jpg" width="40%">
+  
+  <div style="margin-top:10px; font-size:0.9em;">
+     Source: (The New SDLC With Vibe Coding, white paper)
+  </div>
+</div>
+
+<p>
+
+</p>
+
+
 
 Agentic engineering is an emerging software development approach where AI agents are used not just as coding assistants, but as active participants in building, modifying, testing, and maintaining software systems.
 Instead of a human writing most of the code line-by-line, the human defines intent, goals, constraints, and architecture, while AI agents handle much of the execution.
@@ -130,6 +154,18 @@ A Skill is a self-contained unit typically organized as a directory. The only ma
 Additional files (scripts, tools, configurations) are optional and depend on implementation needs.
 A canonical structure, as defined by the open standard at agentskills.io, illustrates how Skills can be packaged for portability and reuse. For example, a Skill may encapsulate workflows such as daily operational tasks (e.g., cafe preparation routines), combining instructions and tooling within a single modular boundary.
 
+
+  <div style="text-align:center; margin-bottom:50px;">
+  <img src="{{ site.baseurl }}/assets/images/Skills.mdFlow.jpg" width="40%">
+  
+  <div style="margin-top:10px; font-size:0.9em;">
+     Source: (The New SDLC With Vibe Coding, white paper)
+  </div>
+</div>
+
+<p>
+
+</p>
 
 
 ## Skill vs MCP
