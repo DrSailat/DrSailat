@@ -19,7 +19,6 @@ date: 2026-06-21
 
 
 
-
 # Vibe Coding to Agentic Engineering :  Collected lessons and reflections
 
 19 June, 2026 
