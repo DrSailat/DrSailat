@@ -24,12 +24,15 @@ date: 2026-06-21
 19 June, 2026 , By Dr. Saira Latif
 
 
+
 Over the past week, I have been deeply engaged in learning, practicing, and experimenting with vibe coding and agentic engineering through a Google 5-day intensive program. This included live streams, hands-on codelabs, podcasts, and the study of relevant white papers.
 It has been a valuable investment of time, especially given that this is not a retrospective topic from years past, but something actively unfolding in real time. We are witnessing, almost moment by moment, how these paradigms are reshaping the structure of software development, the broader technological landscape, and increasingly, our role within it as a society.
 These reflections feel like personal notes and mental snapshots collected while navigating a rapidly expanding field—almost like observing the early waves of a much larger transformation still forming ahead of us.
 In many ways, this feels like a leap into a new technological era, one that is unfolding faster than traditional development cycles can fully capture.
 This article reflects my own simplified understanding of core concepts and techniques behind vibe coding and agentic engineering frameworks. It is intended as an accessible introduction for those interested in how these systems work. I will continue refining and expanding it over time with more detailed explanations.
 At a high level, this is a brief summary of the key ideas and components that form the foundation of vibe coding and agentic engineering frameworks.
+
+
 
 ## A New Paradigm: From Code Writing to Intent Expression
 
@@ -135,9 +138,9 @@ Modern AI agent development has shifted toward terminal-native, composition-driv
 - Trajectory Scoring: evaluation of agent performance across full execution traces rather than terminal outcomes. “Did it succeed efficiently and correctly step-by-step?”
      A trajectory = steps the agent takes:
          - thought → tool call → observation → next step → result
-  
+---  
 ## Agent Skills
-
+---
 Agent Skills are modular execution units that inject task-specific behavioral policies into general-purpose agents at runtime. They function as lightweight representations of procedural memory, defining:
 - reasoning patterns
 - tool usage constraints
@@ -187,18 +190,28 @@ A robust architecture combines both:
 - Skills → dynamic, task-specific execution policies
 
 Skills are designed to mitigate key systemic limitations in LLM-based agent architectures:
- #### 1. Context Window Saturation and Context Rot
-    Overloading system prompts with static instructions results in degraded attention allocation and reduced task fidelity. Skills address this by enabling on-demand context injection, minimizing persistent token overhead and reducing context interference.
+
+#### 1. Context Window Saturation and Context Rot
+
+Overloading system prompts with static instructions results in degraded attention allocation and reduced task fidelity. Skills address this by enabling on-demand context injection, minimizing persistent token overhead and reducing context interference.
+
 #### 2.  Lack of Procedural Memory in LLMs
-    While transformer-based models exhibit emergent episodic and semantic recall, they lack explicit procedural memory representation. Skills introduce a structured abstraction for encoding step-wise operational policies, effectively approximating reusable execution graphs.
+
+While transformer-based models exhibit emergent episodic and semantic recall, they lack explicit procedural memory representation. Skills introduce a structured abstraction for encoding step-wise operational policies, effectively approximating reusable execution graphs.
+
 #### 3. Multi-Agent System Overhead
-    Conventional multi-agent architectures introduce coordination complexity, non-deterministic communication overhead, and maintenance challenges. Skills enable single-agent role multiplexing, allowing dynamic specialization without distributed system complexity.
+
+Conventional multi-agent architectures introduce coordination complexity, non-deterministic communication overhead, and maintenance challenges. Skills enable single-agent role multiplexing, allowing dynamic specialization without distributed system complexity.
+
 #### 4. Cross-Platform Portability
-    Skills are implemented as filesystem-native artifacts (e.g., Markdown + scripts), enabling deterministic portability across heterogeneous execution environments without vendor lock-in or runtime coupling.
+
+Skills are implemented as filesystem-native artifacts (e.g., Markdown + scripts), enabling deterministic portability across heterogeneous execution environments without vendor lock-in or runtime coupling.
 
 
+
+---
 ## Open Interoperability Protocols
-
+---
 Agent systems increasingly rely on standardized protocols to enable composable multi-system interaction:
 - MCP (Model Context Protocol): standardized tool and data connectivity layer.
 - A2A (Agent-to-Agent): inter-agent communication and delegation protocol.
@@ -211,9 +224,9 @@ Together, these protocols define a modular agent architecture where
 - Skills operate as execution logic, 
 - MCP as connectivity, and 
 - A2A/A2UI as coordination and presentation layers.
-  
+---  
 ## Agent CLI Skills vs ADK
-
+---
 Agent development workflows involve repetitive lifecycle tasks such as:
 - scaffolding project structures
 - configuring runtime environments
