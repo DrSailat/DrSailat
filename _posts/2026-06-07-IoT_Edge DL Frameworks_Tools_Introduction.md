@@ -1008,3 +1008,91 @@ Modern Edge AI systems typically follow one of the following deployment paths:
 The choice depends on the available hardware, computational requirements, power constraints, and deployment environment.
 
 Note: *The branding has shifted from "TensorFlow Lite" toward LiteRT, but many developers still use the term "TensorFlow Lite (TFLite)" because of its widespread adoption and existing tooling.*
+
+
+---
+---
+
+# PRACTICE WHAT YOU LEARN
+
+## Tools:
+
+ Anaconda: https://www.anaconda.com/download
+
+## Try CNN in Anaconda!
+
+ Install Anaconda lite version - Create Environment with ML/DL libraries etc
+You can create a fresh environment directly from Terminal(Mac/Win) or Anaconda Prompt 
+
+- To run test CNN in notebook, First ,install tensorflow as it doesn't come preinstalled. You can use    the system terminal(Mac/Windows) to create an environment and install tensoreflow and tensorboard to    visualize CNN training , testing accuracy graphs etc. 
+
+- You can also create an environment inside anaconda , using environment and the create environment      and to install tensorflow and tensorboard etc. Following is stepwise instruction to create a DL        environment in anaconda.
+
+
+
+
+## Install TensorFlow in Anaconda + Jupyter Notebook
+
+### Step 1 — Open Anaconda Navigator
+
+Open: Anaconda
+
+You will see:
+
+    Environments -> Jupyter Notebook, Spyder, VSCode etc.
+
+## Step 2 — Create New Environment (Recommended)
+
+Go to:
+
+- Environments → Create
+- Name:
+  
+      cnn_env
+- Choose:
+  
+      Python 3.10
+  
+Then click:
+
+          Create
+
+## Step 3 — Open Terminal in Environment
+- Inside Anaconda, Click on:
+  
+        cnn_env → Open Terminal
+
+## Step 4 — Install TensorFlow
+
+Run:
+
+    pip install tensorflow
+    
+Also install useful packages:
+
+      pip install matplotlib numpy pandas jupyter
+
+## Step 5 — Launch Jupyter Notebook
+
+Still inside terminal, click on:
+
+            jupyter notebook
+            
+  Browser opens automatically.
+
+## Step 6 — Test TensorFlow
+- Create notebook cell:
+- import tensorflow as tf
+- print(tf.__version__)
+  
+If installed correctly:
+
+      2.x.x  Appears.
+
+
+## Step 7 — Test CNN
+After this you can run CNNcode in notebook
+
+
+
+
